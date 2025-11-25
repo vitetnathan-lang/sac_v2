@@ -2,24 +2,41 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Sac v2 - Générateur de checklist</title>
+  <title>Sac v2 – Checklist intelligente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Ton fichier de styles (tu peux le garder tel quel et l’enrichir) -->
   <link rel="stylesheet" href="styles.css" />
+
   <!-- jsPDF pour l'export PDF -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Logique de l'app -->
   <script defer src="app.js"></script>
 </head>
 <body>
   <header class="header">
-    <h1>Sac v2</h1>
-    <p>Générateur de checklist à partir de ton matériel (destinations, météo, mois, autonomie).</p>
+    <div class="header-left">
+      <h1>Sac v2</h1>
+      <p>Checklist intelligente à partir de ton matériel nettoyé.</p>
+    </div>
+    <div class="header-right">
+      <button id="themeToggle" class="ghost">Mode clair / sombre</button>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- Paramètres du voyage -->
-    <section class="card">
+  <nav class="top-nav">
+    <span class="badge">v2 Pro</span>
+    <span>Destinations · Météo auto · Mois · Niveau technique · Autonomie</span>
+  </nav>
+
+  <main class="layout">
+    <!-- Colonne gauche : paramètres -->
+    <section class="card card-left">
       <h2>Paramètres du voyage</h2>
+
       <div class="form-grid">
+        <!-- Destination -->
         <label>
           Destination
           <select id="destination">
@@ -33,8 +50,9 @@
           </select>
         </label>
 
+        <!-- Activité auto mais modifiable -->
         <label>
-          Activité (auto depuis destination, modifiable)
+          Activité (auto, modifiable)
           <select id="activite">
             <option value="">— auto —</option>
             <option value="Randonnée">Randonnée</option>
@@ -42,12 +60,15 @@
             <option value="Alpinisme">Alpinisme</option>
             <option value="Via ferrata">Via ferrata</option>
             <option value="Ski rando">Ski rando</option>
+            <option value="Canyoning">Canyoning</option>
+            <option value="Snorkeling">Snorkeling</option>
             <option value="Tropical">Tropical</option>
           </select>
         </label>
 
+        <!-- Météo -->
         <label>
-          Météo (si tu ne laisses pas auto, ça override le mois)
+          Météo (si tu choisis, ça override le mois)
           <select id="meteo">
             <option value="">— auto —</option>
             <option value="Chaud">Chaud</option>
@@ -58,6 +79,7 @@
           </select>
         </label>
 
+        <!-- Autonomie -->
         <label>
           Autonomie (tente, popote…)
           <select id="autonomie">
@@ -67,21 +89,24 @@
           </select>
         </label>
 
+        <!-- Niveau technique -->
         <label>
           Niveau technique max
           <select id="techLevel">
-            <option value="1">1 — Rando / Trek</option>
+            <option value="1">1 — Rando / Voyage</option>
             <option value="2">2 — Montagne technique</option>
             <option value="3">3 — Alpinisme / Ski rando</option>
-            <option value="4">4 — Expé / très engagé</option>
+            <option value="4">4 — Expé</option>
           </select>
         </label>
 
+        <!-- Durée -->
         <label>
           Durée (jours)
           <input type="number" id="duree" min="1" max="60" value="7" />
         </label>
 
+        <!-- Adresse + Mois -->
         <label>
           Adresse / lieu
           <input type="text" id="adresse" placeholder="Ex : Chamonix, France" />
@@ -116,11 +141,11 @@
       </div>
     </section>
 
-    <!-- Résumé + checklist -->
-    <section class="card">
+    <!-- Colonne droite : résumé + checklist -->
+    <section class="card card-right">
       <div class="summary">
         <div>
-          <h3>Résumé</h3>
+          <h2>Résumé</h2>
           <p id="summaryText">Aucun filtre appliqué.</p>
         </div>
         <div class="totals">
@@ -142,7 +167,7 @@
               <th>Catégorie</th>
               <th>Équipement</th>
               <th>Détails</th>
-              <th>Activités</th>
+              <th>Activité</th>
               <th>Packs</th>
               <th>Poids (g)</th>
             </tr>

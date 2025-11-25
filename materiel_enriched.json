@@ -7,20 +7,14 @@
     "details": "Sous-couche hiver / froid marqué",
     "family": "Sous-vêtements / Base layer",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -31,20 +25,14 @@
     "details": "Base layer chaud alpinisme",
     "family": "Vêtements",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Alpinisme"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 260.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 260,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -55,20 +43,14 @@
     "details": "Frontale rechargeable avec mode rouge",
     "family": "Électronique",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 75.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 75,
     "volume_l": 0.2,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -79,24 +61,14 @@
     "details": "Surbottes à porter par-dessus en neige/froid",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 1,
     "autonomy": false
   },
   {
@@ -107,24 +79,14 @@
     "details": "Sac de couchage duvet pour nuits froides",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 900,
     "volume_l": 8.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -135,20 +97,14 @@
     "details": "Baudrier léger pour alpi/ski",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -159,23 +115,14 @@
     "details": "Pelle avalanche",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 1.0,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -186,23 +133,14 @@
     "details": "Pelle avalanche légère",
     "family": "Sécurité",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 475.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 475,
     "volume_l": 1.0,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -213,24 +151,14 @@
     "details": "Usage chaud / zones humides",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -241,20 +169,14 @@
     "details": "Sous-vêtement rando",
     "family": "Sous-vêtements / Base layer",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -265,21 +187,14 @@
     "details": "Matelas gonflable 3 saisons",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 700.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 700,
     "volume_l": 2.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -290,21 +205,14 @@
     "details": "Ancien modèle de matelas isolé (option B)",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 700.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 700,
     "volume_l": 2.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -315,22 +223,14 @@
     "details": "Skis de rando polyvalents (setup principal)",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -341,23 +241,14 @@
     "details": "Peaux dédiées pour Backland 88",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -368,23 +259,14 @@
     "details": "Détecteur de victimes d’avalanche",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -395,20 +277,14 @@
     "details": "Casque alpi / ski rando léger",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -419,20 +295,14 @@
     "details": "Tours de cou multi-usage",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -445,15 +315,12 @@
     "activities": [
       "Canyoning"
     ],
-    "main_activity": "Canyoning",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -464,22 +331,14 @@
     "details": "T-shirt respirant chaud / humide",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 150.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 150,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -492,17 +351,12 @@
     "activities": [
       "Snorkeling"
     ],
-    "main_activity": "Snorkeling",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -515,15 +369,12 @@
     "activities": [
       "Canyoning"
     ],
-    "main_activity": "Canyoning",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -534,22 +385,14 @@
     "details": "Couteaux pour ski rando (90 mm)",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -560,19 +403,14 @@
     "details": "Gants via ferrata / assurage / rocher",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Via ferrata",
-      "Randonnée",
-      "Alpinisme"
+      "Via ferrata"
     ],
-    "main_activity": "Via ferrata",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -583,22 +421,14 @@
     "details": "Couteaux/crampons pour fix TLT Speed",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -609,20 +439,14 @@
     "details": "Protection UV forte",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -633,20 +457,14 @@
     "details": "Fixations à inserts légères",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -657,23 +475,14 @@
     "details": "Doudoune alpinisme, froid actif",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Alpinisme"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 300.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 300,
     "volume_l": 3.0,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -684,22 +493,15 @@
     "details": "Sac étanche petit volume",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 29,
@@ -709,20 +511,14 @@
     "details": "Longe double réglable 125 cm",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -733,20 +529,14 @@
     "details": "Trek autonomie 2-7 jours",
     "family": "Sacs",
     "activities": [
-      "Trek",
-      "Randonnée",
-      "Alpinisme"
+      "Trek"
     ],
-    "main_activity": "Trek",
-    "meteo": [],
-    "weight_g": 1100.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 1100,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -757,20 +547,14 @@
     "details": "Lunettes glacier haute altitude",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 1,
     "autonomy": false
   },
   {
@@ -783,15 +567,12 @@
     "activities": [
       "Snorkeling"
     ],
-    "main_activity": "Snorkeling",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -802,20 +583,14 @@
     "details": "Montre GPS polyvalente (objectif principal)",
     "family": "Électronique",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -826,22 +601,15 @@
     "details": "Dry bag dédié nourriture",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 35,
@@ -851,23 +619,14 @@
     "details": "Crampons 12 pointes classiques",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Trek",
-      "Via ferrata"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -878,23 +637,14 @@
     "details": "Alpinisme haute altitude / très froid",
     "family": "Chaussures",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Via ferrata",
-      "Trek"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": false,
-    "tech_level": 4,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -905,23 +655,14 @@
     "details": "Version 68 cm avec dragonne",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Trek",
-      "Via ferrata"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -932,24 +673,14 @@
     "details": "Grand froid, neige profonde",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 1,
     "autonomy": false
   },
   {
@@ -960,26 +691,15 @@
     "details": "Protection sol pour tente Hubba Hubba NX",
     "family": "Abri",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 220.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 220,
     "volume_l": 1.0,
     "owned": true,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "tech_level": 2,
+    "autonomy": false
   },
   {
     "id": 40,
@@ -989,20 +709,14 @@
     "details": "Protection pluie UL / voyage / tropical",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Tropical"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 400.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 2.0,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1013,24 +727,14 @@
     "details": "Raquettes rando neige",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 1,
     "autonomy": false
   },
   {
@@ -1041,20 +745,14 @@
     "details": "Chaussettes rando épaisses",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1065,20 +763,14 @@
     "details": "Chaussettes rando légères",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1089,25 +781,14 @@
     "details": "Tente 2 places autonomie 3 saisons",
     "family": "Abri",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 1720.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 1720,
     "volume_l": 6.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -1118,24 +799,14 @@
     "details": "Sandales polyvalentes, voyage, rivière",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1148,15 +819,12 @@
     "activities": [
       "Snorkeling"
     ],
-    "main_activity": "Snorkeling",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1167,20 +835,14 @@
     "details": "Sécurité communication hors réseau",
     "family": "Électronique",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1191,24 +853,14 @@
     "details": "Veste Gore-Tex montagne / alpinisme",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Alpinisme"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 2.0,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1219,24 +871,14 @@
     "details": "Hardshell 3L alpinisme",
     "family": "Vêtements",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Via ferrata",
-      "Trek"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1247,22 +889,15 @@
     "details": "Dry bag compressible 5 L",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 51,
@@ -1272,20 +907,14 @@
     "details": "Protection soleil, voyage",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1296,22 +925,14 @@
     "details": "Chaussures de ski rando polyvalentes",
     "family": "Chaussures",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1322,20 +943,14 @@
     "details": "Protection moustiques visage/tête",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1346,20 +961,14 @@
     "details": "Gants softshell / montagne",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1370,20 +979,14 @@
     "details": "Doudoune légère synthétique",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1394,24 +997,14 @@
     "details": "Doudoune duvet grand froid / expé",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 900,
     "volume_l": 8.0,
     "owned": false,
-    "tech_level": 4,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -1422,20 +1015,14 @@
     "details": "Panneau solaire pliable 10 W",
     "family": "Électronique",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1446,20 +1033,14 @@
     "details": "Pantalon/short convertible tropical",
     "family": "Vêtements bas",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Tropical"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 400.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1470,22 +1051,14 @@
     "details": "Chemise anti-insectes climat chaud",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Tropical"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1496,24 +1069,14 @@
     "details": "Base layer alpi / froid modéré",
     "family": "Vêtements bas",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1524,20 +1087,14 @@
     "details": "Sous-gants pour froid",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1548,26 +1105,15 @@
     "details": "Récupération, bivouac, voyage",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Chaud', 'Froid', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 63,
@@ -1577,20 +1123,14 @@
     "details": "Protection soleil + nuque",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1603,15 +1143,12 @@
     "activities": [
       "Snorkeling"
     ],
-    "main_activity": "Snorkeling",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1624,15 +1161,12 @@
     "activities": [
       "Canyoning"
     ],
-    "main_activity": "Canyoning",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -1643,23 +1177,14 @@
     "details": "Sonde avalanche",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 1.0,
     "owned": true,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1670,23 +1195,14 @@
     "details": "Sonde avalanche 280 cm",
     "family": "Sécurité",
     "activities": [
-      "Ski rando",
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 280.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 280,
     "volume_l": 1.0,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1697,24 +1213,14 @@
     "details": "Rando 3 saisons, voyage",
     "family": "Vêtements bas",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1725,22 +1231,14 @@
     "details": "Polaire technique montagne",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Froid']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1751,20 +1249,14 @@
     "details": "Sac à viande polaire pour froid",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1775,20 +1267,14 @@
     "details": "Kit réparation matériel",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1799,22 +1285,14 @@
     "details": "Répulsif pour zones à moustiques",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Tropical"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1825,20 +1303,14 @@
     "details": "Assureur-descendeur polyvalent",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1849,23 +1321,14 @@
     "details": "Alpinisme / rando technique, compatibles crampons semi-auto",
     "family": "Chaussures",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Via ferrata",
-      "Trek"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Froid', 'Neige']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": false,
     "tech_level": 3,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1876,19 +1339,14 @@
     "details": "Longe via ferrata avec absorbeur",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Via ferrata",
-      "Randonnée",
-      "Alpinisme"
+      "Via ferrata"
     ],
-    "main_activity": "Via ferrata",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -1899,21 +1357,14 @@
     "details": "Poche à eau principale 3 L",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
     "autonomy": true
   },
   {
@@ -1924,20 +1375,14 @@
     "details": "Bâtons pliables carbone (LEKI FX Carbon)",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1948,20 +1393,14 @@
     "details": "Short rando / voyage",
     "family": "Vêtements bas",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1972,20 +1411,14 @@
     "details": "Sac à viande soie (gîtes, refuges, GR20)",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -1996,20 +1429,14 @@
     "details": "Gants chauds (modèle exact à confirmer)",
     "family": "Accessoires tête/mains/pieds",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2020,21 +1447,14 @@
     "details": "Filtre à eau compact",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
     "autonomy": true
   },
   {
@@ -2045,20 +1465,14 @@
     "details": "Protection lèvres UV/froid",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2069,20 +1483,14 @@
     "details": "Housse oreiller pour voyage",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2093,22 +1501,14 @@
     "details": "T-shirt mérinos polyvalent 3 saisons",
     "family": "Vêtements haut / Isolation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 150.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 150,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2119,20 +1519,14 @@
     "details": "Serviette de voyage/rando",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2143,20 +1537,14 @@
     "details": "Réparation textile doudoune/tente",
     "family": "Sécurité",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 25.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 25,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -2167,21 +1555,14 @@
     "details": "Matelas gonflable isolé (nouveau choix principal)",
     "family": "Couchage",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Trek"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 700.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 700,
     "volume_l": 2.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
+    "tech_level": 2,
     "autonomy": true
   },
   {
@@ -2192,22 +1573,15 @@
     "details": "Cuillère long manche (lyophilisés)",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 89,
@@ -2217,21 +1591,14 @@
     "details": "Marmite titane 750 ml",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 80.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 80,
     "volume_l": 0.7,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
     "autonomy": true
   },
   {
@@ -2244,15 +1611,12 @@
     "activities": [
       "Snorkeling"
     ],
-    "main_activity": "Snorkeling",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2263,24 +1627,14 @@
     "details": "Alpinisme plus engagé, plus rigide",
     "family": "Chaussures",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Via ferrata",
-      "Trek"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 900.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2291,22 +1645,14 @@
     "details": "Bâtons réglables ski rando / raquettes",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Ski rando",
-      "Alpinisme",
-      "Randonnée",
-      "Trek"
+      "Ski rando"
     ],
-    "main_activity": "Ski rando",
-    "meteo": [
-      "Neige"
-    ],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2317,24 +1663,14 @@
     "details": "Pantalon technique rando / alpi 3–4 saisons",
     "family": "Vêtements bas",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2345,24 +1681,14 @@
     "details": "Pantalon Gore-Tex Pro pour alpinisme engagé / expé",
     "family": "Vêtements bas",
     "activities": [
-      "Alpinisme",
-      "Randonnée",
-      "Via ferrata",
-      "Trek"
+      "Alpinisme"
     ],
-    "main_activity": "Alpinisme",
-    "meteo": [
-      "Froid",
-      "Neige",
-      "Pluie"
-    ],
-    "weight_g": 400.0,
+    "meteo": "['Froid', 'Neige', 'Pluie']",
+    "packs": "['Base']",
+    "weight_g": 400,
     "volume_l": 1.2,
     "owned": false,
-    "tech_level": 2,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2373,22 +1699,14 @@
     "details": "Premiers secours avec couverture de survie",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2399,22 +1717,14 @@
     "details": "Hygiène voyage/rando",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2427,15 +1737,12 @@
     "activities": [
       "Canyoning"
     ],
-    "main_activity": "Canyoning",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 5.0,
     "owned": false,
-    "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -2446,20 +1753,14 @@
     "details": "Sac à dos principal 30 L",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2470,20 +1771,14 @@
     "details": "Rando technique, GR20, terrain rocheux",
     "family": "Chaussures",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 900.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 900,
     "volume_l": 5.0,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2494,24 +1789,15 @@
     "details": "Sac de compression étanche (volume à préciser)",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [
-      "Chaud"
-    ],
-    "weight_g": 200.0,
+    "meteo": "['Chaud']",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 101,
@@ -2521,20 +1807,14 @@
     "details": "Sac à dos de jour ultra-compact",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2545,22 +1825,15 @@
     "details": "Sac étanche ultra-léger 5 L",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 103,
@@ -2570,20 +1843,14 @@
     "details": "Powerbank robuste 35 Wh IP67",
     "family": "Électronique",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2594,21 +1861,14 @@
     "details": "Gourde Nalgene 1 L",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
     "autonomy": true
   },
   {
@@ -2619,22 +1879,15 @@
     "details": "Réchaud léger, performant au vent",
     "family": "Cuisine / Hydratation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 90.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 90,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
-    "autonomy": true
+    "autonomy": false
   },
   {
     "id": 106,
@@ -2644,21 +1897,14 @@
     "details": "Bol pliable pour repas",
     "family": "Cuisine",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 80.0,
+    "meteo": "[]",
+    "packs": "['Base', 'Autonomie']",
+    "weight_g": 80,
     "volume_l": 0.7,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base",
-      "Autonomie"
-    ],
     "autonomy": true
   },
   {
@@ -2669,20 +1915,14 @@
     "details": "Assise mousse légère",
     "family": "Soin / Hygiène / Divers",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": false,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   },
   {
@@ -2693,20 +1933,14 @@
     "details": "Pochette étanche format A5",
     "family": "Sacs / Organisation",
     "activities": [
-      "Randonnée",
-      "Trek",
-      "Alpinisme",
-      "Via ferrata"
+      "Randonnée"
     ],
-    "main_activity": "Randonnée",
-    "meteo": [],
-    "weight_g": 200.0,
+    "meteo": "[]",
+    "packs": "['Base']",
+    "weight_g": 200,
     "volume_l": 0.5,
     "owned": true,
     "tech_level": 1,
-    "packs": [
-      "Base"
-    ],
     "autonomy": false
   }
 ]

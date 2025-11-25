@@ -1,6 +1,6 @@
 let materiel = [];
 
-// Destinations préconfigurées
+// Configuration des destinations
 const destinations = {
   gr20: {
     label: "GR20 autonomie",
@@ -51,23 +51,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   initialiserUI();
 });
 
-/* ---------------------------------------------------
-   Chargement du JSON enrichi
---------------------------------------------------- */
+/* -------------------------------
+   Chargement du JSON matériel
+------------------------------- */
 async function chargerMateriel() {
   try {
     const res = await fetch("materiel_enriched.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
     materiel = await res.json();
+    console.log("Matériel chargé :", materiel.length, "items");
   } catch (e) {
     console.error("Erreur chargement materiel_enriched.json", e);
     materiel = [];
   }
 }
 
-/* ---------------------------------------------------
-   Initialisation interface
---------------------------------------------------- */
+/* -------------------------------
+   Initialisation de l'interface
+------------------------------- */
 function initialiserUI() {
   const destinationSelect = document.getElementById("destination");
   const activiteSelect = document.getElementById("activite");
@@ -82,13 +83,14 @@ function initialiserUI() {
   const btnFromAddress = document.getElementById("btnFromAddress");
   const btnReset = document.getElementById("btnReset");
   const btnExportPdf = document.getElementById("btnExportPdf");
+  const themeToggle = document.getElementById("themeToggle");
 
-  // Destination → valeurs par défaut (activité, météo, autonomie, niveau)
+  // Destination → auto-remplissage
   destinationSelect.addEventListener("change", () => {
     const val = destinationSelect.value;
     if (val && destinations[val]) {
       const d = destinations[val];
-      activiteSelect.value = d.activite || "";
+      if (!activiteSelect.value) activiteSelect.value = d.activite || "";
       if (!meteoSelect.value) meteoSelect.value = d.meteo || "";
       if (!autonomieSelect.value)
         autonomieSelect.value = d.autonomie ? "oui" : "non";
@@ -96,94 +98,19 @@ function initialiserUI() {
     }
   });
 
-  // Générer à partir des filtres manuels
+  // Générer sac à partir des paramètres
   btnGenerate.addEventListener("click", () => {
-    const criteres = {
-      destination: destinationSelect.value || null,
-      activite: activiteSelect.value || null,
-      meteo: meteoSelect.value || null,
-      autonomie:
-        autonomieSelect.value === ""
-          ? null
-          : autonomieSelect.value === "oui",
-      techLevel: parseInt(techLevelSelect.value, 10) || 1,
-      duree: parseInt(dureeInput.value, 10) || 1,
-      mois: moisSelect.value ? parseInt(moisSelect.value, 10) : null
-    };
+    const criteres = lireCriteres(false);
     genererChecklist(criteres);
   });
 
-  // Adresse + mois → Météo auto → Sac
+  // Adresse + mois → météo auto → sac
   btnFromAddress.addEventListener("click", async () => {
-    const adresse = (adresseInput.value || "").trim();
-    const moisVal = moisSelect.value;
-
-    if (!adresse || !moisVal) {
-      alert("Merci de saisir une adresse ET un mois.");
-      return;
-    }
-
-    try {
-      const moisInt = parseInt(moisVal, 10);
-      miseAJourResume(
-        { infoOnly: true, texte: "Analyse météo en cours..." },
-        []
-      );
-
-      const loc = await geocoderAdresse(adresse);
-      if (!loc) {
-        alert("Adresse introuvable.");
-        miseAJourResume(null, []);
-        return;
-      }
-
-      const meteoInfo = await analyserMeteoPourMois(
-        loc.lat,
-        loc.lon,
-        moisInt
-      );
-
-      // Si l'utilisateur n'a pas forcé la météo, on utilise la météo auto
-      if (!meteoSelect.value && meteoInfo.meteoCategorie) {
-        meteoSelect.value = meteoInfo.meteoCategorie;
-      }
-      // Si beaucoup de pluie ou neige, on force Pluie ou Neige
-      if (meteoInfo.neigeProbable) {
-        meteoSelect.value = "Neige";
-      } else if (meteoInfo.pluieImportante) {
-        meteoSelect.value = "Pluie";
-      }
-
-      // Activité : si rien choisi, on met Randonnée par défaut
-      if (!activiteSelect.value) {
-        activiteSelect.value = "Randonnée";
-      }
-
-      const critAutonomie =
-        autonomieSelect.value === ""
-          ? null
-          : autonomieSelect.value === "oui";
-
-      const criteres = {
-        destination: null,
-        activite: activiteSelect.value || null,
-        meteo: meteoSelect.value || null,
-        autonomie: critAutonomie,
-        techLevel: parseInt(techLevelSelect.value, 10) || 1,
-        duree: parseInt(dureeInput.value, 10) || 1,
-        lieu: loc.displayName,
-        mois: moisInt,
-        meteoAutoLabel: meteoInfo.label
-      };
-
-      genererChecklist(criteres);
-    } catch (e) {
-      console.error(e);
-      alert("Erreur lors de l'analyse météo.");
-      miseAJourResume(null, []);
-    }
+    const criteres = await lireCriteresAvecMeteoAuto();
+    if (criteres) genererChecklist(criteres);
   });
 
+  // Reset
   btnReset.addEventListener("click", () => {
     destinationSelect.value = "";
     activiteSelect.value = "";
@@ -197,17 +124,125 @@ function initialiserUI() {
     miseAJourResume(null);
   });
 
+  // Export PDF
   btnExportPdf.addEventListener("click", exporterPdf);
+
+  // Mode clair/sombre
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
 }
 
-/* ---------------------------------------------------
-   Géocodage (adresse -> lat/lon) via Nominatim
---------------------------------------------------- */
+/* -------------------------------
+   Lecture des critères (manuel)
+------------------------------- */
+function lireCriteres(includeMeteoAutoInfo) {
+  const destinationSelect = document.getElementById("destination");
+  const activiteSelect = document.getElementById("activite");
+  const meteoSelect = document.getElementById("meteo");
+  const autonomieSelect = document.getElementById("autonomie");
+  const techLevelSelect = document.getElementById("techLevel");
+  const dureeInput = document.getElementById("duree");
+  const moisSelect = document.getElementById("mois");
+
+  return {
+    destination: destinationSelect.value || null,
+    activite: activiteSelect.value || null,
+    meteo: meteoSelect.value || null,
+    autonomie:
+      autonomieSelect.value === ""
+        ? null
+        : autonomieSelect.value === "oui",
+    techLevel: parseInt(techLevelSelect.value, 10) || 1,
+    duree: parseInt(dureeInput.value, 10) || 1,
+    mois: moisSelect.value ? parseInt(moisSelect.value, 10) : null,
+    meteoAutoLabel: includeMeteoAutoInfo ? "" : null,
+    lieu: null
+  };
+}
+
+/* -------------------------------
+   Lecture critères + météo auto
+------------------------------- */
+async function lireCriteresAvecMeteoAuto() {
+  const adresseInput = document.getElementById("adresse");
+  const moisSelect = document.getElementById("mois");
+  const activiteSelect = document.getElementById("activite");
+  const meteoSelect = document.getElementById("meteo");
+  const autonomieSelect = document.getElementById("autonomie");
+  const techLevelSelect = document.getElementById("techLevel");
+  const dureeInput = document.getElementById("duree");
+
+  const adresse = (adresseInput.value || "").trim();
+  const moisVal = moisSelect.value;
+
+  if (!adresse || !moisVal) {
+    alert("Merci de saisir une adresse ET un mois.");
+    return null;
+  }
+
+  try {
+    miseAJourResume(
+      { infoOnly: true, texte: "Analyse météo en cours..." },
+      []
+    );
+
+    const mInt = parseInt(moisVal, 10);
+    const loc = await geocoderAdresse(adresse);
+    if (!loc) {
+      alert("Adresse introuvable.");
+      miseAJourResume(null, []);
+      return null;
+    }
+
+    const meteoInfo = await analyserMeteoPourMois(loc.lat, loc.lon, mInt);
+
+    // Si l'utilisateur n'a pas forcé la météo, on utilise celle dérivée
+    if (!meteoSelect.value && meteoInfo.meteoCategorie) {
+      meteoSelect.value = meteoInfo.meteoCategorie;
+    }
+    if (meteoInfo.neigeProbable) {
+      meteoSelect.value = "Neige";
+    } else if (meteoInfo.pluieImportante) {
+      meteoSelect.value = "Pluie";
+    }
+
+    // Activité : si rien, Randonnée par défaut
+    if (!activiteSelect.value) {
+      activiteSelect.value = "Randonnée";
+    }
+
+    const critAutonomie =
+      autonomieSelect.value === ""
+        ? null
+        : autonomieSelect.value === "oui";
+
+    return {
+      destination: null,
+      activite: activiteSelect.value || null,
+      meteo: meteoSelect.value || null,
+      autonomie: critAutonomie,
+      techLevel: parseInt(techLevelSelect.value, 10) || 1,
+      duree: parseInt(dureeInput.value, 10) || 1,
+      mois: mInt,
+      lieu: loc.displayName,
+      meteoAutoLabel: meteoInfo.label
+    };
+  } catch (e) {
+    console.error(e);
+    alert("Erreur lors de l'analyse météo.");
+    miseAJourResume(null, []);
+    return null;
+  }
+}
+
+/* -------------------------------
+   Géocodage via Nominatim
+------------------------------- */
 async function geocoderAdresse(adresse) {
   const url =
     "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" +
     encodeURIComponent(adresse);
-
   const res = await fetch(url, {
     headers: {
       "Accept-Language": "fr",
@@ -225,9 +260,9 @@ async function geocoderAdresse(adresse) {
   };
 }
 
-/* ---------------------------------------------------
-   Analyse météo pour un mois (Open-Meteo Archive)
---------------------------------------------------- */
+/* -------------------------------
+   Météo moyenne d'un mois
+------------------------------- */
 function getStartEndForMonth(year, monthInt) {
   const lastDayPerMonth = {
     1: 31,
@@ -252,7 +287,7 @@ function getStartEndForMonth(year, monthInt) {
 }
 
 async function analyserMeteoPourMois(lat, lon, monthInt) {
-  const year = new Date().getFullYear() - 1; // on prend l'année passée
+  const year = new Date().getFullYear() - 1;
   const { start, end } = getStartEndForMonth(year, monthInt);
 
   const url =
@@ -264,12 +299,7 @@ async function analyserMeteoPourMois(lat, lon, monthInt) {
   if (!res.ok) throw new Error("Erreur Open-Meteo " + res.status);
   const data = await res.json();
 
-  if (
-    !data ||
-    !data.daily ||
-    !data.daily.time ||
-    data.daily.time.length === 0
-  ) {
+  if (!data || !data.daily || !data.daily.time || !data.daily.time.length) {
     throw new Error("Données météo indisponibles.");
   }
 
@@ -291,12 +321,11 @@ async function analyserMeteoPourMois(lat, lon, monthInt) {
   const pMoy = sumP / n;
   const sTot = sumS;
 
-  // Catégorie température
   let meteoCat = "Tempéré";
   if (tMoy >= 22) meteoCat = "Chaud";
   else if (tMoy <= 10) meteoCat = "Froid";
 
-  const pluieImportante = pMoy >= 3; // ~3 mm/j
+  const pluieImportante = pMoy >= 3;
   const neigeProbable = sTot > 0.4;
 
   let labelParts = [];
@@ -312,26 +341,25 @@ async function analyserMeteoPourMois(lat, lon, monthInt) {
   };
 }
 
-/* ---------------------------------------------------
-   FILTRAGE INTELLIGENT
---------------------------------------------------- */
+/* -------------------------------
+   Filtrage intelligent
+------------------------------- */
 function genererChecklist(criteres) {
   let resultat = materiel.filter((item) => {
-    const itemActs = (item.activities || []).map((a) =>
+    const acts = (item.activities || []).map((a) =>
       (a || "").toLowerCase()
     );
-    const itemCat = (item.category || "").toLowerCase();
-    const itemMainAct = (item.main_activity || "").toLowerCase();
+    const cat = (item.category || "").toLowerCase();
+    const fam = (item.family || "").toLowerCase();
 
     // ACTIVITÉ
     if (criteres.activite) {
       const crit = criteres.activite.toLowerCase();
       const matchActivite =
-        itemActs.includes(crit) || itemCat.includes(crit) || itemMainAct === crit;
+        acts.includes(crit) || cat.includes(crit);
 
       if (!matchActivite) {
-        // sauf pour les items très génériques : packs, frontale, Nalgene...
-        const gen = (item.family || "").toLowerCase();
+        // Items génériques (lampe, Nalgene, etc.) gardés même si activité différente
         const genericFamilies = [
           "électronique",
           "cuisine / hydratation",
@@ -340,18 +368,20 @@ function genererChecklist(criteres) {
           "accessoires tête/mains/pieds",
           "couchage"
         ];
-        const isGeneric = genericFamilies.some((g) => gen.includes(g));
+        const isGeneric = genericFamilies.some((g) =>
+          fam.includes(g)
+        );
         if (!isGeneric) return false;
       }
     }
 
-    // EXCLUSION SKI / NEIGE quand on est en simple Randonnée
+    // EXCLUSION SKI / NEIGE quand activité = Randonnée
     if (
       criteres.activite &&
       criteres.activite.toLowerCase() === "randonnée"
     ) {
       const nom = `${item.model || ""} ${item.details || ""}`.toLowerCase();
-      const hasSkiActivity = itemActs.includes("ski rando");
+      const hasSkiActivity = acts.includes("ski rando");
       const skiKeywords = [
         "ski",
         "backland",
@@ -378,32 +408,13 @@ function genererChecklist(criteres) {
       }
     }
 
-    // AUTONOMIE
-    if (criteres.autonomie !== null) {
-      const isAutonomieItem = (item.packs || []).some((p) =>
-        p.toLowerCase().includes("autonomie")
-      );
-
-      if (criteres.autonomie === true) {
-        // on garde base + autonomie
-        if (
-          !(
-            isAutonomieItem ||
-            (item.packs || []).includes("Base")
-          )
-        ) {
-          return false;
-        }
-      } else {
-        // autonomie = non → on exclut les items strictement autonomie
-        if (isAutonomieItem) {
-          return false;
-        }
-      }
+    // AUTONOMIE : si non, on exclut les items purement autonomie
+    if (criteres.autonomie === false && item.autonomy) {
+      return false;
     }
 
-    // NIVEAU TECHNIQUE
-    const tech = item.tech_level || item.techLevel || 1;
+    // NIVEAU TECH
+    const tech = item.tech_level || 1;
     if (tech > criteres.techLevel) return false;
 
     return true;
@@ -413,9 +424,9 @@ function genererChecklist(criteres) {
   miseAJourResume(criteres, resultat);
 }
 
-/* ---------------------------------------------------
-   AFFICHAGE CHECKLIST
---------------------------------------------------- */
+/* -------------------------------
+   Affichage checklist
+------------------------------- */
 function miseAJourChecklist(liste) {
   const tbody = document.querySelector("#checklistTable tbody");
   tbody.innerHTML = "";
@@ -424,11 +435,11 @@ function miseAJourChecklist(liste) {
   liste.forEach((e) => {
     const tr = document.createElement("tr");
 
+    // Case à cocher
     const tdCheck = document.createElement("td");
     tdCheck.className = "checkbox-cell";
     const box = document.createElement("div");
     box.className = "checkbox";
-    box.textContent = "";
     box.addEventListener("click", () => {
       box.classList.toggle("checked");
       box.textContent = box.classList.contains("checked") ? "✓" : "";
@@ -445,21 +456,25 @@ function miseAJourChecklist(liste) {
     const tdDetails = document.createElement("td");
     tdDetails.textContent = e.details || "";
 
-    const tdActs = document.createElement("td");
-    tdActs.textContent = (e.activities || []).join(", ");
+    const tdAct = document.createElement("td");
+    tdAct.textContent = (e.activities || []).join(", ");
 
     const tdPacks = document.createElement("td");
     tdPacks.textContent = (e.packs || []).join(", ");
 
     const tdWeight = document.createElement("td");
-    tdWeight.textContent = e.weight_g ? e.weight_g.toString() : "";
-    if (e.weight_g) totalPoids += e.weight_g;
+    if (e.weight_g) {
+      tdWeight.textContent = e.weight_g.toString();
+      totalPoids += e.weight_g;
+    } else {
+      tdWeight.textContent = "";
+    }
 
     tr.appendChild(tdCheck);
     tr.appendChild(tdCat);
     tr.appendChild(tdName);
     tr.appendChild(tdDetails);
-    tr.appendChild(tdActs);
+    tr.appendChild(tdAct);
     tr.appendChild(tdPacks);
     tr.appendChild(tdWeight);
 
@@ -472,9 +487,9 @@ function miseAJourChecklist(liste) {
     liste.length.toString();
 }
 
-/* ---------------------------------------------------
-   RÉSUMÉ
---------------------------------------------------- */
+/* -------------------------------
+   Résumé en haut à droite
+------------------------------- */
 function miseAJourResume(criteres, liste = []) {
   const el = document.getElementById("summaryText");
   if (!criteres || criteres.infoOnly) {
@@ -497,7 +512,7 @@ function miseAJourResume(criteres, liste = []) {
     parts.push(
       "Autonomie : " + (criteres.autonomie ? "oui" : "non")
     );
-  parts.push("Niv. technique ≤ " + criteres.techLevel);
+  parts.push("Niv. tech ≤ " + criteres.techLevel);
   parts.push("Durée : " + criteres.duree + " j");
   if (criteres.meteoAutoLabel)
     parts.push("Climat : " + criteres.meteoAutoLabel);
@@ -506,27 +521,26 @@ function miseAJourResume(criteres, liste = []) {
   el.textContent = parts.join(" · ");
 }
 
-/* ---------------------------------------------------
-   EXPORT PDF
---------------------------------------------------- */
+/* -------------------------------
+   Export PDF (simple, lisible)
+------------------------------- */
 function exporterPdf() {
   if (
     typeof window.jspdf === "undefined" &&
     typeof window.jsPDF === "undefined"
   ) {
     alert(
-      "jsPDF non chargé. Le PDF sera fonctionnel une fois le site en ligne."
+      "jsPDF non chargé. Le PDF sera fonctionnel en production (GitHub Pages)."
     );
     return;
   }
-
   const { jsPDF } = window.jspdf || window;
   const doc = new jsPDF();
 
   doc.text("Checklist Sac v2", 10, 10);
-  const rows = [];
-  const tbody = document.querySelector("#checklistTable tbody");
 
+  const tbody = document.querySelector("#checklistTable tbody");
+  const rows = [];
   tbody.querySelectorAll("tr").forEach((tr) => {
     const cells = tr.querySelectorAll("td");
     rows.push([
