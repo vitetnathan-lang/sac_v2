@@ -12,7 +12,7 @@
 <body>
   <header class="header">
     <h1>Sac v2</h1>
-    <p>Générateur de checklist à partir de ton matériel (avec météo auto).</p>
+    <p>Générateur de checklist à partir de ton matériel (destinations, météo, mois, autonomie).</p>
   </header>
 
   <main class="container">
@@ -28,13 +28,13 @@
             <option value="compostelle">Compostelle</option>
             <option value="thailande">Thaïlande</option>
             <option value="alpes">Alpes (rando)</option>
-            <option value="alpinisme">Alpinisme</option>
+            <option value="alpinisme">Chamonix (alpinisme)</option>
             <option value="ski">Ski de rando</option>
           </select>
         </label>
 
         <label>
-          Activité principale
+          Activité (auto depuis destination, modifiable)
           <select id="activite">
             <option value="">— auto —</option>
             <option value="Randonnée">Randonnée</option>
@@ -47,13 +47,14 @@
         </label>
 
         <label>
-          Météo
+          Météo (si tu ne laisses pas auto, ça override le mois)
           <select id="meteo">
             <option value="">— auto —</option>
             <option value="Chaud">Chaud</option>
             <option value="Tempéré">Tempéré</option>
             <option value="Froid">Froid</option>
             <option value="Pluie">Pluie</option>
+            <option value="Neige">Neige</option>
           </select>
         </label>
 
@@ -71,8 +72,8 @@
           <select id="techLevel">
             <option value="1">1 — Rando / Trek</option>
             <option value="2">2 — Montagne technique</option>
-            <option value="3">3 — Alpinisme neige</option>
-            <option value="4">4 — Expé</option>
+            <option value="3">3 — Alpinisme / Ski rando</option>
+            <option value="4">4 — Expé / très engagé</option>
           </select>
         </label>
 
@@ -81,27 +82,35 @@
           <input type="number" id="duree" min="1" max="60" value="7" />
         </label>
 
-        <!-- Adresse + dates pour météo auto -->
         <label>
           Adresse / lieu
           <input type="text" id="adresse" placeholder="Ex : Chamonix, France" />
         </label>
 
         <label>
-          Date de début (pour le climat)
-          <input type="date" id="dateDebut" />
-        </label>
-
-        <label>
-          Date de fin
-          <input type="date" id="dateFin" />
+          Mois du voyage
+          <select id="mois">
+            <option value="">— auto —</option>
+            <option value="1">Janvier</option>
+            <option value="2">Février</option>
+            <option value="3">Mars</option>
+            <option value="4">Avril</option>
+            <option value="5">Mai</option>
+            <option value="6">Juin</option>
+            <option value="7">Juillet</option>
+            <option value="8">Août</option>
+            <option value="9">Septembre</option>
+            <option value="10">Octobre</option>
+            <option value="11">Novembre</option>
+            <option value="12">Décembre</option>
+          </select>
         </label>
       </div>
 
       <div class="actions">
         <button id="btnGenerate">Générer mon sac</button>
         <button id="btnFromAddress" class="secondary">
-          Adresse → Météo → Sac
+          Adresse + mois → Météo auto → Sac
         </button>
         <button id="btnReset" class="secondary">Réinitialiser</button>
       </div>

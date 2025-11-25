@@ -1,11 +1,13 @@
 let materiel = [];
-let destinations = {
+
+// Destinations préconfigurées
+const destinations = {
   gr20: {
     label: "GR20 autonomie",
     activite: "Trek",
     meteo: "Froid",
     autonomie: true,
-    techLevel: 1
+    techLevel: 2
   },
   compostelle: {
     label: "Compostelle",
@@ -29,7 +31,7 @@ let destinations = {
     techLevel: 2
   },
   alpinisme: {
-    label: "Alpinisme",
+    label: "Chamonix (alpinisme)",
     activite: "Alpinisme",
     meteo: "Froid",
     autonomie: false,
@@ -55,6 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function chargerMateriel() {
   try {
     const res = await fetch("materiel_enriched.json");
+    if (!res.ok) throw new Error("HTTP " + res.status);
     materiel = await res.json();
   } catch (e) {
     console.error("Erreur chargement materiel_enriched.json", e);
@@ -72,51 +75,61 @@ function initialiserUI() {
   const autonomieSelect = document.getElementById("autonomie");
   const techLevelSelect = document.getElementById("techLevel");
   const dureeInput = document.getElementById("duree");
-
   const adresseInput = document.getElementById("adresse");
-  const dateDebutInput = document.getElementById("dateDebut");
-  const dateFinInput = document.getElementById("dateFin");
+  const moisSelect = document.getElementById("mois");
 
   const btnGenerate = document.getElementById("btnGenerate");
   const btnFromAddress = document.getElementById("btnFromAddress");
   const btnReset = document.getElementById("btnReset");
   const btnExportPdf = document.getElementById("btnExportPdf");
 
+  // Destination → valeurs par défaut (activité, météo, autonomie, niveau)
   destinationSelect.addEventListener("change", () => {
     const val = destinationSelect.value;
     if (val && destinations[val]) {
       const d = destinations[val];
-      if (!activiteSelect.value) activiteSelect.value = d.activite;
-      if (!meteoSelect.value) meteoSelect.value = d.meteo;
-      if (!autonomieSelect.value) autonomieSelect.value = d.autonomie ? "oui" : "non";
-      techLevelSelect.value = d.techLevel.toString();
+      activiteSelect.value = d.activite || "";
+      if (!meteoSelect.value) meteoSelect.value = d.meteo || "";
+      if (!autonomieSelect.value)
+        autonomieSelect.value = d.autonomie ? "oui" : "non";
+      techLevelSelect.value = String(d.techLevel || 1);
     }
   });
 
+  // Générer à partir des filtres manuels
   btnGenerate.addEventListener("click", () => {
     const criteres = {
       destination: destinationSelect.value || null,
       activite: activiteSelect.value || null,
       meteo: meteoSelect.value || null,
-      autonomie: autonomieSelect.value === "" ? null : (autonomieSelect.value === "oui"),
+      autonomie:
+        autonomieSelect.value === ""
+          ? null
+          : autonomieSelect.value === "oui",
       techLevel: parseInt(techLevelSelect.value, 10) || 1,
-      duree: parseInt(dureeInput.value, 10) || 1
+      duree: parseInt(dureeInput.value, 10) || 1,
+      mois: moisSelect.value ? parseInt(moisSelect.value, 10) : null
     };
     genererChecklist(criteres);
   });
 
+  // Adresse + mois → Météo auto → Sac
   btnFromAddress.addEventListener("click", async () => {
     const adresse = (adresseInput.value || "").trim();
-    const dateDebut = dateDebutInput.value;
-    const dateFin = dateFinInput.value;
+    const moisVal = moisSelect.value;
 
-    if (!adresse || !dateDebut || !dateFin) {
-      alert("Merci de saisir une adresse et une plage de dates.");
+    if (!adresse || !moisVal) {
+      alert("Merci de saisir une adresse ET un mois.");
       return;
     }
 
     try {
-      miseAJourResume({ infoOnly: true, texte: "Analyse météo en cours..." }, []);
+      const moisInt = parseInt(moisVal, 10);
+      miseAJourResume(
+        { infoOnly: true, texte: "Analyse météo en cours..." },
+        []
+      );
+
       const loc = await geocoderAdresse(adresse);
       if (!loc) {
         alert("Adresse introuvable.");
@@ -124,24 +137,32 @@ function initialiserUI() {
         return;
       }
 
-      const meteoInfo = await analyserMeteoPourPeriode(loc.lat, loc.lon, dateDebut, dateFin);
+      const meteoInfo = await analyserMeteoPourMois(
+        loc.lat,
+        loc.lon,
+        moisInt
+      );
 
-      // Appliquer la météo déduite
-      if (meteoInfo.meteoCategorie) {
+      // Si l'utilisateur n'a pas forcé la météo, on utilise la météo auto
+      if (!meteoSelect.value && meteoInfo.meteoCategorie) {
         meteoSelect.value = meteoInfo.meteoCategorie;
       }
-      // Option : si beaucoup de pluie, tu peux forcer "Pluie"
-      if (meteoInfo.pluieImportante) {
+      // Si beaucoup de pluie ou neige, on force Pluie ou Neige
+      if (meteoInfo.neigeProbable) {
+        meteoSelect.value = "Neige";
+      } else if (meteoInfo.pluieImportante) {
         meteoSelect.value = "Pluie";
       }
 
-      // Activité : si rien choisi, on laisse vide pour que tu choisisses ou on met Randonnée par défaut
+      // Activité : si rien choisi, on met Randonnée par défaut
       if (!activiteSelect.value) {
         activiteSelect.value = "Randonnée";
       }
 
-      // Autonomie = auto (tu peux changer la logique ici si tu veux)
-      const critAutonomie = autonomieSelect.value === "" ? null : (autonomieSelect.value === "oui");
+      const critAutonomie =
+        autonomieSelect.value === ""
+          ? null
+          : autonomieSelect.value === "oui";
 
       const criteres = {
         destination: null,
@@ -151,6 +172,7 @@ function initialiserUI() {
         techLevel: parseInt(techLevelSelect.value, 10) || 1,
         duree: parseInt(dureeInput.value, 10) || 1,
         lieu: loc.displayName,
+        mois: moisInt,
         meteoAutoLabel: meteoInfo.label
       };
 
@@ -170,8 +192,7 @@ function initialiserUI() {
     techLevelSelect.value = "1";
     dureeInput.value = "7";
     adresseInput.value = "";
-    dateDebutInput.value = "";
-    dateFinInput.value = "";
+    moisSelect.value = "";
     miseAJourChecklist([]);
     miseAJourResume(null);
   });
@@ -180,10 +201,11 @@ function initialiserUI() {
 }
 
 /* ---------------------------------------------------
-   Géocodage (adresse -> lat/lon)
+   Géocodage (adresse -> lat/lon) via Nominatim
 --------------------------------------------------- */
 async function geocoderAdresse(adresse) {
-  const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" +
+  const url =
+    "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" +
     encodeURIComponent(adresse);
 
   const res = await fetch(url, {
@@ -192,6 +214,7 @@ async function geocoderAdresse(adresse) {
       "User-Agent": "sac-v2-app"
     }
   });
+  if (!res.ok) throw new Error("Erreur Nominatim " + res.status);
   const data = await res.json();
   if (!data || data.length === 0) return null;
 
@@ -203,31 +226,50 @@ async function geocoderAdresse(adresse) {
 }
 
 /* ---------------------------------------------------
-   Analyse météo (Open-Meteo / archive)
-   On normalise les dates sur l'année passée pour avoir du passé
+   Analyse météo pour un mois (Open-Meteo Archive)
 --------------------------------------------------- */
-function normaliserDatePourArchive(dateStr) {
-  if (!dateStr || dateStr.length < 10) return null;
-  const mmdd = dateStr.slice(5); // "MM-DD"
-  const year = new Date().getFullYear() - 1; // année passée
-  return year + "-" + mmdd;
+function getStartEndForMonth(year, monthInt) {
+  const lastDayPerMonth = {
+    1: 31,
+    2: 28,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31
+  };
+  const mm = String(monthInt).padStart(2, "0");
+  const last = lastDayPerMonth[monthInt] || 30;
+  return {
+    start: `${year}-${mm}-01`,
+    end: `${year}-${mm}-${String(last).padStart(2, "0")}`
+  };
 }
 
-async function analyserMeteoPourPeriode(lat, lon, dateDebut, dateFin) {
-  const start = normaliserDatePourArchive(dateDebut);
-  const end = normaliserDatePourArchive(dateFin);
-  if (!start || !end) {
-    throw new Error("Dates invalides.");
-  }
+async function analyserMeteoPourMois(lat, lon, monthInt) {
+  const year = new Date().getFullYear() - 1; // on prend l'année passée
+  const { start, end } = getStartEndForMonth(year, monthInt);
 
-  const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}` +
+  const url =
+    `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}` +
     `&start_date=${start}&end_date=${end}` +
     `&daily=temperature_2m_mean,precipitation_sum,snowfall_sum&timezone=auto`;
 
   const res = await fetch(url);
+  if (!res.ok) throw new Error("Erreur Open-Meteo " + res.status);
   const data = await res.json();
 
-  if (!data || !data.daily || !data.daily.time || data.daily.time.length === 0) {
+  if (
+    !data ||
+    !data.daily ||
+    !data.daily.time ||
+    data.daily.time.length === 0
+  ) {
     throw new Error("Données météo indisponibles.");
   }
 
@@ -236,7 +278,9 @@ async function analyserMeteoPourPeriode(lat, lon, dateDebut, dateFin) {
   const neige = data.daily.snowfall_sum || [];
 
   const n = data.daily.time.length;
-  let sumT = 0, sumP = 0, sumS = 0;
+  let sumT = 0,
+    sumP = 0,
+    sumS = 0;
   for (let i = 0; i < n; i++) {
     if (typeof temps[i] === "number") sumT += temps[i];
     if (typeof precip[i] === "number") sumP += precip[i];
@@ -249,14 +293,14 @@ async function analyserMeteoPourPeriode(lat, lon, dateDebut, dateFin) {
 
   // Catégorie température
   let meteoCat = "Tempéré";
-  if (tMoy >= 26) meteoCat = "Chaud";
-  else if (tMoy <= 8) meteoCat = "Froid";
+  if (tMoy >= 22) meteoCat = "Chaud";
+  else if (tMoy <= 10) meteoCat = "Froid";
 
-  const pluieImportante = pMoy >= 2;  // ~2mm/j
-  const neigeProbable = sTot > 0.5;
+  const pluieImportante = pMoy >= 3; // ~3 mm/j
+  const neigeProbable = sTot > 0.4;
 
   let labelParts = [];
-  labelParts.push(`T° moy. ~ ${tMoy.toFixed(1)}°C`);
+  labelParts.push(`T° moy. ≈ ${tMoy.toFixed(1)}°C`);
   if (pluieImportante) labelParts.push("pluvieux");
   if (neigeProbable) labelParts.push("neige possible");
 
@@ -272,15 +316,57 @@ async function analyserMeteoPourPeriode(lat, lon, dateDebut, dateFin) {
    FILTRAGE INTELLIGENT
 --------------------------------------------------- */
 function genererChecklist(criteres) {
-  let resultat = materiel.filter(item => {
+  let resultat = materiel.filter((item) => {
+    const itemActs = (item.activities || []).map((a) =>
+      (a || "").toLowerCase()
+    );
+    const itemCat = (item.category || "").toLowerCase();
+    const itemMainAct = (item.main_activity || "").toLowerCase();
 
     // ACTIVITÉ
     if (criteres.activite) {
-      const acts = (item.activities || []).map(a => a.toLowerCase());
-      const cat = (item.category || "").toLowerCase();
       const crit = criteres.activite.toLowerCase();
+      const matchActivite =
+        itemActs.includes(crit) || itemCat.includes(crit) || itemMainAct === crit;
 
-      if (!(acts.includes(crit) || cat.includes(crit))) {
+      if (!matchActivite) {
+        // sauf pour les items très génériques : packs, frontale, Nalgene...
+        const gen = (item.family || "").toLowerCase();
+        const genericFamilies = [
+          "électronique",
+          "cuisine / hydratation",
+          "soin / hygiène / divers",
+          "sacs / organisation",
+          "accessoires tête/mains/pieds",
+          "couchage"
+        ];
+        const isGeneric = genericFamilies.some((g) => gen.includes(g));
+        if (!isGeneric) return false;
+      }
+    }
+
+    // EXCLUSION SKI / NEIGE quand on est en simple Randonnée
+    if (
+      criteres.activite &&
+      criteres.activite.toLowerCase() === "randonnée"
+    ) {
+      const nom = `${item.model || ""} ${item.details || ""}`.toLowerCase();
+      const hasSkiActivity = itemActs.includes("ski rando");
+      const skiKeywords = [
+        "ski",
+        "backland",
+        "maestrale",
+        "dva",
+        "arva",
+        "pelle avalanche",
+        "sonde avalanche",
+        "peaux",
+        "couteaux de ski"
+      ];
+      if (
+        hasSkiActivity ||
+        skiKeywords.some((k) => nom.includes(k))
+      ) {
         return false;
       }
     }
@@ -294,14 +380,22 @@ function genererChecklist(criteres) {
 
     // AUTONOMIE
     if (criteres.autonomie !== null) {
-      const isAutonomieItem = (item.packs || [])
-        .some(p => p.toLowerCase().includes("autonomie"));
+      const isAutonomieItem = (item.packs || []).some((p) =>
+        p.toLowerCase().includes("autonomie")
+      );
 
       if (criteres.autonomie === true) {
-        if (!(isAutonomieItem || (item.packs || []).includes("Base"))) {
+        // on garde base + autonomie
+        if (
+          !(
+            isAutonomieItem ||
+            (item.packs || []).includes("Base")
+          )
+        ) {
           return false;
         }
       } else {
+        // autonomie = non → on exclut les items strictement autonomie
         if (isAutonomieItem) {
           return false;
         }
@@ -327,7 +421,7 @@ function miseAJourChecklist(liste) {
   tbody.innerHTML = "";
   let totalPoids = 0;
 
-  liste.forEach(e => {
+  liste.forEach((e) => {
     const tr = document.createElement("tr");
 
     const tdCheck = document.createElement("td");
@@ -345,7 +439,8 @@ function miseAJourChecklist(liste) {
     tdCat.textContent = e.category || "";
 
     const tdName = document.createElement("td");
-    tdName.textContent = (e.brand ? e.brand + " " : "") + (e.model || "");
+    tdName.textContent =
+      (e.brand ? e.brand + " " : "") + (e.model || "");
 
     const tdDetails = document.createElement("td");
     tdDetails.textContent = e.details || "";
@@ -371,8 +466,10 @@ function miseAJourChecklist(liste) {
     tbody.appendChild(tr);
   });
 
-  document.getElementById("totalWeight").textContent = totalPoids + " g";
-  document.getElementById("totalItems").textContent = liste.length.toString();
+  document.getElementById("totalWeight").textContent =
+    totalPoids + " g";
+  document.getElementById("totalItems").textContent =
+    liste.length.toString();
 }
 
 /* ---------------------------------------------------
@@ -381,9 +478,10 @@ function miseAJourChecklist(liste) {
 function miseAJourResume(criteres, liste = []) {
   const el = document.getElementById("summaryText");
   if (!criteres || criteres.infoOnly) {
-    el.textContent = criteres && criteres.texte
-      ? criteres.texte
-      : "Aucun filtre appliqué.";
+    el.textContent =
+      criteres && criteres.texte
+        ? criteres.texte
+        : "Aucun filtre appliqué.";
     return;
   }
   const parts = [];
@@ -393,10 +491,16 @@ function miseAJourResume(criteres, liste = []) {
   }
   if (criteres.activite) parts.push("Activité : " + criteres.activite);
   if (criteres.meteo) parts.push("Météo : " + criteres.meteo);
-  if (criteres.autonomie !== null) parts.push("Autonomie : " + (criteres.autonomie ? "oui" : "non"));
+  if (criteres.mois)
+    parts.push("Mois : " + String(criteres.mois).padStart(2, "0"));
+  if (criteres.autonomie !== null)
+    parts.push(
+      "Autonomie : " + (criteres.autonomie ? "oui" : "non")
+    );
   parts.push("Niv. technique ≤ " + criteres.techLevel);
   parts.push("Durée : " + criteres.duree + " j");
-  if (criteres.meteoAutoLabel) parts.push("Climat : " + criteres.meteoAutoLabel);
+  if (criteres.meteoAutoLabel)
+    parts.push("Climat : " + criteres.meteoAutoLabel);
   parts.push("Items : " + liste.length);
 
   el.textContent = parts.join(" · ");
@@ -406,8 +510,13 @@ function miseAJourResume(criteres, liste = []) {
    EXPORT PDF
 --------------------------------------------------- */
 function exporterPdf() {
-  if (typeof window.jspdf === "undefined" && typeof window.jsPDF === "undefined") {
-    alert("jsPDF non chargé. Le PDF sera fonctionnel une fois le site en ligne.");
+  if (
+    typeof window.jspdf === "undefined" &&
+    typeof window.jsPDF === "undefined"
+  ) {
+    alert(
+      "jsPDF non chargé. Le PDF sera fonctionnel une fois le site en ligne."
+    );
     return;
   }
 
@@ -418,7 +527,7 @@ function exporterPdf() {
   const rows = [];
   const tbody = document.querySelector("#checklistTable tbody");
 
-  tbody.querySelectorAll("tr").forEach(tr => {
+  tbody.querySelectorAll("tr").forEach((tr) => {
     const cells = tr.querySelectorAll("td");
     rows.push([
       cells[1]?.textContent || "",
@@ -431,7 +540,7 @@ function exporterPdf() {
   });
 
   let y = 20;
-  rows.forEach(r => {
+  rows.forEach((r) => {
     doc.text(r.join(" | "), 10, y);
     y += 6;
     if (y > 280) {
