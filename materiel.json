@@ -1,0 +1,2364 @@
+[
+  {
+    "id": 1,
+    "category": "Chaussures trail / rando technique",
+    "brand": "La Sportiva",
+    "model": "Ultra Raptor II GTX (44)",
+    "details": "Rando technique, GR20, terrain rocheux",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 2,
+    "category": "Chaussures alpinisme 3 saisons",
+    "brand": "Scarpa",
+    "model": "Ribelle Lite HD (44)",
+    "details": "Alpinisme / rando technique, compatibles crampons semi-auto",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 3,
+    "category": "Chaussures alpinisme engagé / froid",
+    "brand": "La Sportiva",
+    "model": "Trango Tower GTX",
+    "details": "Alpinisme plus engagé, plus rigide",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 4,
+    "category": "Chaussures alpinisme très froid",
+    "brand": "La Sportiva",
+    "model": "G5 EVO (44)",
+    "details": "Alpinisme haute altitude / très froid",
+    "family": "Chaussures",
+    "packs": [
+      "Base",
+      "Chaleur",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 5,
+    "category": "Chaussures rando montagne / approche",
+    "brand": "Salewa",
+    "model": "MS Mountain Trainer 2 Mid GTX",
+    "details": "Alternative aux Scarpa si rupture",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 6,
+    "category": "Chaussures trail / rando légère",
+    "brand": "Salomon",
+    "model": "Sense Ride 5 (44)",
+    "details": "Trail et rando légère, Thaïlande, entraînement",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 7,
+    "category": "Chaussures chaudes / amphibies",
+    "brand": "Salomon",
+    "model": "Amphib Bold 2 (44)",
+    "details": "Usage chaud / zones humides",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 8,
+    "category": "Sandales rando / voyage",
+    "brand": "Teva",
+    "model": "Hurricane XLT2 (44)",
+    "details": "Sandales polyvalentes, voyage, rivière",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 9,
+    "category": "Claquettes récupération / bivouac",
+    "brand": "Hoka",
+    "model": "Ora Slide 3 (44)",
+    "details": "Récupération, bivouac, voyage",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 10,
+    "category": "Bottes grand froid",
+    "brand": "Sorel",
+    "model": "Glacier XT (44)",
+    "details": "Grand froid, neige profonde",
+    "family": "Chaussures",
+    "packs": [
+      "Base",
+      "Chaleur",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 11,
+    "category": "Surbottes neige",
+    "brand": "NEOS",
+    "model": "Adventurer M",
+    "details": "Surbottes à porter par-dessus en neige/froid",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 12,
+    "category": "Raquettes à neige",
+    "brand": "TSL",
+    "model": "Highlander Adjust",
+    "details": "Raquettes rando neige",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 13,
+    "category": "Pantalon technique montagne",
+    "brand": "Millet",
+    "model": "Trilogy Icon Cordura PT",
+    "details": "Pantalon technique rando / alpi 3–4 saisons",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 14,
+    "category": "Pantalon rando léger",
+    "brand": "Patagonia",
+    "model": "Quandary Pants",
+    "details": "Rando 3 saisons, voyage",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 15,
+    "category": "Pantalon tropical anti-insectes",
+    "brand": "Craghoppers",
+    "model": "NosiLife Pro II Pants",
+    "details": "Climat chaud / jungle / anti-insectes",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 16,
+    "category": "Pantalon convertible tropical",
+    "brand": "Craghoppers",
+    "model": "NosiLife Pro Convertible Pants",
+    "details": "Pantalon/short convertible tropical",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 17,
+    "category": "Pantalon alpinisme / expé",
+    "brand": "Norrøna",
+    "model": "Trollveggen GTX Pro Pants",
+    "details": "Pantalon Gore-Tex Pro pour alpinisme engagé / expé",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base",
+      "Chaleur",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 18,
+    "category": "Pantalon rando générique",
+    "brand": "Decathlon",
+    "model": "Pantalon de randonnée",
+    "details": "Modèle générique pour rando",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 19,
+    "category": "Short rando générique",
+    "brand": "Decathlon",
+    "model": "Short de randonnée",
+    "details": "Short rando / voyage",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 20,
+    "category": "T-shirt mérinos 150",
+    "brand": "Icebreaker",
+    "model": "Tech Lite III",
+    "details": "T-shirt mérinos polyvalent 3 saisons",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 21,
+    "category": "T-shirt synthétique léger",
+    "brand": "Patagonia",
+    "model": "Capilene Cool Daily",
+    "details": "T-shirt respirant chaud / humide",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 22,
+    "category": "T-shirts rando",
+    "brand": "Decathlon",
+    "model": "T-shirts randonnée x3",
+    "details": "T-shirts secours / entraînement",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 23,
+    "category": "Chemise tropicale manches courtes",
+    "brand": "Craghoppers",
+    "model": "NosiLife SS Shirt",
+    "details": "Chemise anti-insectes climat chaud",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 24,
+    "category": "Chemise rando manches longues",
+    "brand": "Columbia",
+    "model": "Silver Ridge Utility Shirt",
+    "details": "Chemise respirante rando / soleil",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 25,
+    "category": "Midlayer technique",
+    "brand": "Patagonia",
+    "model": "R1 TechFace Hoody",
+    "details": "Polaire technique montagne",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 26,
+    "category": "Doudoune alpi active",
+    "brand": "Patagonia",
+    "model": "DAS Light Hoody",
+    "details": "Doudoune alpinisme, froid actif",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 27,
+    "category": "Doudoune duvet chaude",
+    "brand": "Rab",
+    "model": "Neutrino Pro Hoody",
+    "details": "Doudoune duvet grand froid / expé",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base",
+      "Chaleur",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 28,
+    "category": "Isolant synthétique léger",
+    "brand": "Patagonia",
+    "model": "Nano Puff Hoody",
+    "details": "Doudoune légère synthétique",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 29,
+    "category": "Veste hardshell montagne",
+    "brand": "Millet",
+    "model": "Kamet Light GTX Jacket",
+    "details": "Veste Gore-Tex montagne / alpinisme",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 30,
+    "category": "Veste pluie ultra-light",
+    "brand": "Outdoor Research",
+    "model": "Helium Rain Jacket",
+    "details": "Protection pluie UL / voyage / tropical",
+    "family": "Vêtements haut / Isolation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 31,
+    "category": "Boxer mérinos",
+    "brand": "Icebreaker",
+    "model": "Anatomica Boxers",
+    "details": "Sous-vêtement rando",
+    "family": "Sous-vêtements / Base layer",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 32,
+    "category": "Legging thermique hiver",
+    "brand": "Icebreaker",
+    "model": "260 Tech Leggings",
+    "details": "Sous-couche hiver / froid marqué",
+    "family": "Sous-vêtements / Base layer",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 33,
+    "category": "Sous-pantalon thermique",
+    "brand": "Icebreaker",
+    "model": "Oasis 200 Leggings",
+    "details": "Base layer alpi / froid modéré",
+    "family": "Vêtements bas",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 34,
+    "category": "Gants techniques montagne",
+    "brand": "Forclaz",
+    "model": "MT900",
+    "details": "Gants softshell / montagne",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 35,
+    "category": "Sous-gants mérinos",
+    "brand": "Icebreaker",
+    "model": "Oasis Liners",
+    "details": "Sous-gants pour froid",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 36,
+    "category": "Gants de ski / alpi",
+    "brand": "Icebreaker",
+    "model": "Ski Gloves",
+    "details": "Gants chauds (modèle exact à confirmer)",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 37,
+    "category": "Gants de manips / via ferrata",
+    "brand": "Black Diamond",
+    "model": "Crag Gloves",
+    "details": "Gants via ferrata / assurage / rocher",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 38,
+    "category": "Chaussettes rando chaudes",
+    "brand": "Icebreaker",
+    "model": "Hike+ Heavy Crew",
+    "details": "Chaussettes rando épaisses",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 39,
+    "category": "Chaussettes rando légères",
+    "brand": "Icebreaker",
+    "model": "Hike+ Light Crew",
+    "details": "Chaussettes rando légères",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 40,
+    "category": "Chaussettes rando",
+    "brand": "Decathlon",
+    "model": "Chaussettes randonnée x3",
+    "details": "Chaussettes génériques rando",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 41,
+    "category": "Tour de cou léger UV",
+    "brand": "Buff",
+    "model": "Coolnet UV+ solid black",
+    "details": "Protection UV / chaud",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 42,
+    "category": "Tour de cou chaud",
+    "brand": "Buff",
+    "model": "Thermonet Neckwarmer",
+    "details": "Froid / hiver",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 43,
+    "category": "Tours de cou polyvalents",
+    "brand": "Buff",
+    "model": "Buff x2",
+    "details": "Tours de cou multi-usage",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 44,
+    "category": "Bonnet chaud",
+    "brand": "Générique",
+    "model": "Bonnet hiver",
+    "details": "Bonnet chaud pour froid / nuit bivouac",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 45,
+    "category": "Chapeau à large bord",
+    "brand": "Tilley",
+    "model": "LTM6 Airflo",
+    "details": "Protection soleil, voyage",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 46,
+    "category": "Casquette saharienne",
+    "brand": "Buff",
+    "model": "Pack Sahara Cap light",
+    "details": "Protection soleil + nuque",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 47,
+    "category": "Moustiquaire de tête",
+    "brand": "Sea to Summit",
+    "model": "Mosquito Head Net",
+    "details": "Protection moustiques visage/tête",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 48,
+    "category": "Casquette rando",
+    "brand": "Decathlon",
+    "model": "Casquette randonnée",
+    "details": "Casquette générique rando",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 49,
+    "category": "Lunettes de haute montagne",
+    "brand": "Julbo",
+    "model": "Explorer 2.0 Reactiv High Mountain",
+    "details": "Lunettes glacier haute altitude",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 50,
+    "category": "Sac de couchage duvet 3 saisons froid",
+    "brand": "Rab",
+    "model": "Alpine 400 Down Sleeping Bag",
+    "details": "Sac de couchage duvet pour nuits froides",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 51,
+    "category": "Matelas gonflable isolé",
+    "brand": "Nemo",
+    "model": "Tensor Insulated Regular",
+    "details": "Matelas gonflable isolé (nouveau choix principal)",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 52,
+    "category": "Matelas gonflable isolé",
+    "brand": "Nemo",
+    "model": "Astro Insulated Regular",
+    "details": "Ancien modèle de matelas isolé (option B)",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 53,
+    "category": "Tente 2 places",
+    "brand": "MSR",
+    "model": "Hubba Hubba NX2",
+    "details": "Tente 2P rando / autonomie",
+    "family": "Abri",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 54,
+    "category": "Sac à viande soie",
+    "brand": "Sea to Summit",
+    "model": "Silk Liner",
+    "details": "Sac à viande soie (gîtes, refuges, GR20)",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 55,
+    "category": "Sac à viande thermique",
+    "brand": "Sea to Summit",
+    "model": "Reactor Mummy Liner",
+    "details": "Sac à viande polaire pour froid",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 56,
+    "category": "Sac à dos rando",
+    "brand": "Millet",
+    "model": "Ubic 30",
+    "details": "Sac à dos principal 30 L",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 57,
+    "category": "Sac à dos rando gros volume",
+    "brand": "Millet",
+    "model": "Ubic 50+10 W",
+    "details": "Sac à dos 50+10 L, autonomie",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 58,
+    "category": "Sac de jour repliable",
+    "brand": "Sea to Summit",
+    "model": "Ultra-Sil Day Pack 20L",
+    "details": "Sac à dos de jour ultra-compact",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 59,
+    "category": "Pochette étanche",
+    "brand": "Cocoon",
+    "model": "Zippered Flat Pouch S",
+    "details": "Pochette étanche format A5",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 60,
+    "category": "Sac/oreiller",
+    "brand": "Therm-a-Rest",
+    "model": "Stuff Sack Pillow",
+    "details": "Housse oreiller pour voyage",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 61,
+    "category": "Serviette microfibre",
+    "brand": "Sea to Summit",
+    "model": "Tek Towel M",
+    "details": "Serviette de voyage/rando",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 62,
+    "category": "Sac étanche 3L",
+    "brand": "Sea to Summit",
+    "model": "Dry Bag 3L",
+    "details": "Sac étanche petit volume",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 63,
+    "category": "Sac étanche compressible 5L",
+    "brand": "Sea to Summit",
+    "model": "Lightweight Dry Bag 5L",
+    "details": "Dry bag compressible 5 L",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 64,
+    "category": "Sac étanche UL 5L",
+    "brand": "Sea to Summit",
+    "model": "Ultra-Sil Dry Bag 5L",
+    "details": "Sac étanche ultra-léger 5 L",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 65,
+    "category": "Sac de compression étanche",
+    "brand": "Sea to Summit",
+    "model": "Ultra-Sil Compression Dry Sack",
+    "details": "Sac de compression étanche (volume à préciser)",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 66,
+    "category": "Sac nourriture",
+    "brand": "Sea to Summit",
+    "model": "Food Bag 5L",
+    "details": "Dry bag dédié nourriture",
+    "family": "Sacs / Organisation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 67,
+    "category": "Réchaud à gaz",
+    "brand": "Soto",
+    "model": "WindMaster",
+    "details": "Réchaud léger, performant au vent",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 68,
+    "category": "Popote titane",
+    "brand": "Toaks",
+    "model": "Titanium Pot 750 ml with bail handle",
+    "details": "Marmite titane 750 ml",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 69,
+    "category": "Cuillère titane long manche",
+    "brand": "Toaks",
+    "model": "Titanium Long Handle Spoon",
+    "details": "Cuillère long manche (lyophilisés)",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 70,
+    "category": "Filtre à eau",
+    "brand": "Sawyer",
+    "model": "Squeeze Filter",
+    "details": "Filtre à eau compact",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 71,
+    "category": "Gourde rigide",
+    "brand": "Nalgene",
+    "model": "Wide Mouth 1L",
+    "details": "Gourde Nalgene 1 L",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 72,
+    "category": "Poche à eau",
+    "brand": "Hydrapak",
+    "model": "Shape-Shift 3L",
+    "details": "Poche à eau principale 3 L",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 73,
+    "category": "Poche à eau secondaire",
+    "brand": "Générique",
+    "model": "Poche à eau 2L",
+    "details": "Poche à eau 2 L supplémentaire",
+    "family": "Cuisine / Hydratation",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 74,
+    "category": "Piolet classique",
+    "brand": "Petzl",
+    "model": "Glacier",
+    "details": "Piolet alpinisme classique",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 75,
+    "category": "Piolet classique + dragonne",
+    "brand": "Petzl",
+    "model": "Glacier 68 cm + Linkin",
+    "details": "Version 68 cm avec dragonne",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 76,
+    "category": "Crampons polyvalents",
+    "brand": "Petzl",
+    "model": "Vasak LLU",
+    "details": "Crampons 12 pointes neige/glace",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 77,
+    "category": "Crampons polyvalents",
+    "brand": "Grivel",
+    "model": "G12",
+    "details": "Crampons 12 pointes classiques",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 78,
+    "category": "Crampons de ski rando",
+    "brand": "Dynafit",
+    "model": "Crampons TLT Speed",
+    "details": "Couteaux/crampons pour fix TLT Speed",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 79,
+    "category": "Skis de randonnée",
+    "brand": "Atomic",
+    "model": "Backland 88",
+    "details": "Skis de rando polyvalents (setup principal)",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 80,
+    "category": "Skis de randonnée (option B)",
+    "brand": "Dynafit",
+    "model": "Seven Summits",
+    "details": "Skis de rando option alternative",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 81,
+    "category": "Fixations de rando",
+    "brand": "ATK",
+    "model": "Crest 10",
+    "details": "Fixations à inserts légères",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 82,
+    "category": "Chaussures de ski rando",
+    "brand": "Scarpa",
+    "model": "Maestrale (44)",
+    "details": "Chaussures de ski rando polyvalentes",
+    "family": "Chaussures",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 83,
+    "category": "Peaux de phoque",
+    "brand": "Atomic",
+    "model": "Backland 88 Skins",
+    "details": "Peaux dédiées pour Backland 88",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 84,
+    "category": "Couteaux de ski",
+    "brand": "Dynafit",
+    "model": "Couteaux 90 mm",
+    "details": "Couteaux pour ski rando (90 mm)",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 85,
+    "category": "Casque polyvalent",
+    "brand": "Petzl",
+    "model": "Boreo",
+    "details": "Casque alpi / ski rando léger",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 86,
+    "category": "Baudrier alpi / ski rando",
+    "brand": "Petzl",
+    "model": "Altitude",
+    "details": "Baudrier léger pour alpi/ski",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 87,
+    "category": "Assureur / descendeur",
+    "brand": "Petzl",
+    "model": "Reverso",
+    "details": "Assureur-descendeur polyvalent",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 88,
+    "category": "Longe réglable double",
+    "brand": "Petzl",
+    "model": "Dual Connect Adjust 125",
+    "details": "Longe double réglable 125 cm",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 89,
+    "category": "Kit DVA",
+    "brand": "Mammut",
+    "model": "Barryvox",
+    "details": "Détecteur de victimes d’avalanche",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 90,
+    "category": "Pelle avalanche",
+    "brand": "Mammut",
+    "model": "Alugator",
+    "details": "Pelle avalanche",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 91,
+    "category": "Sonde avalanche",
+    "brand": "Mammut",
+    "model": "Probe",
+    "details": "Sonde avalanche",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 92,
+    "category": "Bâtons rando / alpi",
+    "brand": "Leki",
+    "model": "Sherpa FX Carbon Strong",
+    "details": "Bâtons pliables carbone (LEKI FX Carbon)",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 93,
+    "category": "Bâtons ski rando",
+    "brand": "Black Diamond",
+    "model": "Traverse Ski Poles",
+    "details": "Bâtons réglables ski rando / raquettes",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 94,
+    "category": "Set via ferrata",
+    "brand": "Petzl",
+    "model": "Scorpio Vertigo EASHOOK",
+    "details": "Longe via ferrata avec absorbeur",
+    "family": "Technique alpi / ski / grimpe",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 95,
+    "category": "Gants via ferrata / escalade",
+    "brand": "Black Diamond",
+    "model": "Crag Gloves",
+    "details": "Gants doigt court pour via ferrata/assurage",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 96,
+    "category": "Lampe frontale principale",
+    "brand": "Petzl",
+    "model": "Actik Core",
+    "details": "Frontale rechargeable avec mode rouge",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 97,
+    "category": "Lampe frontale secondaire",
+    "brand": "Caperlan",
+    "model": "Lampe frontale Caperlan",
+    "details": "Frontale de secours",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 98,
+    "category": "Montre GPS",
+    "brand": "Garmin",
+    "model": "Fenix 8 Solar (47 mm)",
+    "details": "Montre GPS polyvalente (objectif principal)",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 99,
+    "category": "Montre GPS (alternative)",
+    "brand": "Garmin",
+    "model": "Fenix 7X Pro Sapphire",
+    "details": "Alternative plus grande",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 100,
+    "category": "Balise satellite",
+    "brand": "Garmin",
+    "model": "inReach Mini 2",
+    "details": "Sécurité communication hors réseau",
+    "family": "Électronique",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 101,
+    "category": "Panneau solaire",
+    "brand": "Goal Zero",
+    "model": "Nomad 10",
+    "details": "Panneau solaire pliable 10 W",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 102,
+    "category": "Batterie externe",
+    "brand": "Goal Zero",
+    "model": "Venture 35",
+    "details": "Powerbank robuste 35 Wh IP67",
+    "family": "Électronique",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 103,
+    "category": "Crème solaire haute altitude",
+    "brand": "Alphanova",
+    "model": "Crème solaire SPF50+ haute altitude",
+    "details": "Protection UV forte",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 104,
+    "category": "Stick lèvres haute altitude",
+    "brand": "Alphanova",
+    "model": "Stick lèvres SPF50+",
+    "details": "Protection lèvres UV/froid",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 105,
+    "category": "Répulsif moustiques tropical",
+    "brand": "Générique",
+    "model": "Répulsif tropical",
+    "details": "Répulsif pour zones à moustiques",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 106,
+    "category": "Moustiquaire de tête",
+    "brand": "Sea to Summit",
+    "model": "Mosquito Head Net",
+    "details": "Protection moustiques tête",
+    "family": "Accessoires tête/mains/pieds",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 107,
+    "category": "Pad mousse assise",
+    "brand": "Therm-a-Rest",
+    "model": "Z Seat",
+    "details": "Assise mousse légère",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 108,
+    "category": "Kit réparation textile",
+    "brand": "Gear Aid",
+    "model": "Repair Kit",
+    "details": "Kit réparation matériel",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 109,
+    "category": "Ruban de réparation",
+    "brand": "Gear Aid",
+    "model": "Tenacious Tape",
+    "details": "Ruban réparation doudounes/tentes",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 110,
+    "category": "Tire-tique",
+    "brand": "Tick Twister",
+    "model": "Tire-tique",
+    "details": "Retrait des tiques",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 111,
+    "category": "Trousse de secours",
+    "brand": "Générique",
+    "model": "Trousse de secours complétée",
+    "details": "Premiers secours avec couverture de survie",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base",
+      "Sécurité"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 112,
+    "category": "Trousse de toilette",
+    "brand": "Générique",
+    "model": "Trousse de toilette rando",
+    "details": "Hygiène voyage/rando",
+    "family": "Soin / Hygiène / Divers",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 113,
+    "category": "Canyoning - Harnais",
+    "brand": "Petzl",
+    "model": "Canyon Guide",
+    "details": "Harnais canyoning avec culotte de protection, usage régulier/autonome",
+    "family": "Canyoning",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 114,
+    "category": "Canyoning - Descendeur",
+    "brand": "Petzl",
+    "model": "Pirana Guide",
+    "details": "Descendeur canyon à freinage modulable",
+    "family": "Canyoning",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 115,
+    "category": "Canyoning - Chaussures",
+    "brand": "La Sportiva",
+    "model": "TX Canyon",
+    "details": "Chaussures dédiées canyoning, semelle très adhérente",
+    "family": "Canyoning",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 116,
+    "category": "Canyoning - Combinaison néoprène",
+    "brand": "Seland / Decathlon",
+    "model": "Combinaison canyon 2 pièces 5 mm",
+    "details": "Long John + veste, renforts, épaisseur 5 mm",
+    "family": "Canyoning",
+    "packs": [
+      "Base",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 117,
+    "category": "Snorkeling - Masque",
+    "brand": "Cressi",
+    "model": "F1",
+    "details": "Masque frameless snorkeling/plongée, choix taille en magasin",
+    "family": "Snorkeling",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 118,
+    "category": "Snorkeling - Tuba",
+    "brand": "TUSA",
+    "model": "Hyperdry Elite II",
+    "details": "Tuba semi-dry pour snorkeling",
+    "family": "Snorkeling",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 119,
+    "category": "Snorkeling - Palmes",
+    "brand": "Cressi",
+    "model": "Palau SAF",
+    "details": "Palmes courtes de voyage pour snorkeling",
+    "family": "Snorkeling",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 120,
+    "category": "Snorkeling - Chaussons néoprène",
+    "brand": "Générique",
+    "model": "Chaussons néoprène 2–3 mm",
+    "details": "Protection pieds dans les palmes / sur rochers",
+    "family": "Snorkeling",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 121,
+    "category": "Snorkeling - Lycra anti-UV",
+    "brand": "Générique",
+    "model": "Top anti-UV manches longues",
+    "details": "Protection solaire en surface / eau chaude",
+    "family": "Snorkeling",
+    "packs": [
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": null,
+    "price_eur": null,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 122,
+    "category": "Sous-couche thermique",
+    "brand": "Icebreaker",
+    "model": "260 Tech LS",
+    "details": "Base layer chaud alpinisme",
+    "family": "Vêtements",
+    "packs": [
+      "Base",
+      "Chaleur",
+      "Froid"
+    ],
+    "activities": [],
+    "weight_g": 260.0,
+    "price_eur": 100.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 123,
+    "category": "Sur-pantalon alpinisme",
+    "brand": "Millet",
+    "model": "Kamet Light GTX Pants",
+    "details": "Hardshell 3L alpinisme",
+    "family": "Vêtements",
+    "packs": [
+      "Sécurité",
+      "Froid",
+      "Pluie"
+    ],
+    "activities": [],
+    "weight_g": 400.0,
+    "price_eur": 250.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 124,
+    "category": "Sécurité avalanche",
+    "brand": "Mammut",
+    "model": "Barryvox",
+    "details": "DVA avalanche",
+    "family": "Sécurité",
+    "packs": [
+      "Sécurité",
+      "Froid",
+      "Neige"
+    ],
+    "activities": [],
+    "weight_g": 210.0,
+    "price_eur": 350.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 125,
+    "category": "Sécurité avalanche",
+    "brand": "Mammut",
+    "model": "Probe 280",
+    "details": "Sonde avalanche 280 cm",
+    "family": "Sécurité",
+    "packs": [
+      "Sécurité",
+      "Froid",
+      "Neige"
+    ],
+    "activities": [],
+    "weight_g": 280.0,
+    "price_eur": 80.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 126,
+    "category": "Sécurité avalanche",
+    "brand": "Mammut",
+    "model": "Alugator Light",
+    "details": "Pelle avalanche légère",
+    "family": "Sécurité",
+    "packs": [
+      "Sécurité",
+      "Froid",
+      "Neige"
+    ],
+    "activities": [],
+    "weight_g": 475.0,
+    "price_eur": 80.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 127,
+    "category": "Réparation",
+    "brand": "Gear Aid",
+    "model": "Tenacious Tape",
+    "details": "Réparation textile doudoune/tente",
+    "family": "Sécurité",
+    "packs": [
+      "Sécurité",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 25.0,
+    "price_eur": 10.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": false
+  },
+  {
+    "id": 128,
+    "category": "Sac à dos trekking",
+    "brand": "Osprey",
+    "model": "Exos 48",
+    "details": "Trek autonomie 2-7 jours",
+    "family": "Sacs",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 1100.0,
+    "price_eur": 200.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 129,
+    "category": "Tente",
+    "brand": "MSR",
+    "model": "Hubba Hubba NX 2P",
+    "details": "Tente 2 places autonomie 3 saisons",
+    "family": "Abri",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 1720.0,
+    "price_eur": 450.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 130,
+    "category": "Matelas",
+    "brand": "Nemo",
+    "model": "Astro",
+    "details": "Matelas gonflable 3 saisons",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 700.0,
+    "price_eur": 150.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 131,
+    "category": "Réchaud",
+    "brand": "Soto",
+    "model": "WindMaster",
+    "details": "Réchaud performant vent",
+    "family": "Cuisine",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 87.0,
+    "price_eur": 60.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 132,
+    "category": "Duvet",
+    "brand": "Rab",
+    "model": "Alpine 400",
+    "details": "Duvet 3 saisons",
+    "family": "Couchage",
+    "packs": [
+      "Autonomie",
+      "Chaleur"
+    ],
+    "activities": [],
+    "weight_g": 900.0,
+    "price_eur": 360.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 133,
+    "category": "Popote",
+    "brand": "Sea to Summit",
+    "model": "X-Bowl",
+    "details": "Bol pliable pour repas",
+    "family": "Cuisine",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 80.0,
+    "price_eur": 20.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  },
+  {
+    "id": 134,
+    "category": "Tapis de sol",
+    "brand": "MSR",
+    "model": "Groundsheet Hubba Hubba NX",
+    "details": "Protection sol pour tente Hubba Hubba NX",
+    "family": "Abri",
+    "packs": [
+      "Autonomie",
+      "Base"
+    ],
+    "activities": [],
+    "weight_g": 220.0,
+    "price_eur": 55.0,
+    "meteo": [],
+    "tech_level": 1,
+    "autonomy": true
+  }
+]

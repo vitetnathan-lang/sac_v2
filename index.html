@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sac v2 - Générateur de checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+  <!-- jsPDF CDN for PDF export -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Sac v2</h1>
+    <p>Générateur de checklist à partir de ton matériel.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Paramètres du voyage</h2>
+      <div class="form-grid">
+        <label>
+          Destination
+          <select id="destination">
+            <option value="">— choisir —</option>
+            <option value="gr20">GR20 autonomie</option>
+            <option value="compostelle">Compostelle</option>
+            <option value="thailande">Thaïlande</option>
+            <option value="alpes">Alpes (rando)</option>
+            <option value="alpinisme">Alpinisme</option>
+            <option value="ski">Ski de rando</option>
+          </select>
+        </label>
+
+        <label>
+          Activité principale
+          <select id="activite">
+            <option value="">— auto —</option>
+            <option value="Randonnée">Randonnée</option>
+            <option value="Trek">Trek</option>
+            <option value="Alpinisme">Alpinisme</option>
+            <option value="Via ferrata">Via ferrata</option>
+            <option value="Ski rando">Ski rando</option>
+            <option value="Tropical">Tropical</option>
+          </select>
+        </label>
+
+        <label>
+          Météo
+          <select id="meteo">
+            <option value="">— auto —</option>
+            <option value="Chaud">Chaud</option>
+            <option value="Tempéré">Tempéré</option>
+            <option value="Froid">Froid</option>
+            <option value="Pluie">Pluie</option>
+            <option value="Neige">Neige</option>
+          </select>
+        </label>
+
+        <label>
+          Autonomie (tente, popote…)
+          <select id="autonomie">
+            <option value="">— auto —</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+        </label>
+
+        <label>
+          Niveau technique max
+          <select id="techLevel">
+            <option value="1">1 — Rando / Trek</option>
+            <option value="2">2 — Montagne technique</option>
+            <option value="3">3 — Alpinisme neige</option>
+            <option value="4">4 — Expé</option>
+          </select>
+        </label>
+
+        <label>
+          Durée (jours)
+          <input type="number" id="duree" min="1" max="60" value="7" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="btnGenerate">Générer mon sac</button>
+        <button id="btnReset" class="secondary">Réinitialiser</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="summary">
+        <div>
+          <h3>Résumé</h3>
+          <p id="summaryText">Aucun filtre appliqué.</p>
+        </div>
+        <div class="totals">
+          <div><span>Poids total :</span> <strong id="totalWeight">0 g</strong></div>
+          <div><span>Nombre d'items :</span> <strong id="totalItems">0</strong></div>
+        </div>
+      </div>
+
+      <div class="checklist-header">
+        <h2>Checklist générée</h2>
+        <button id="btnExportPdf" class="ghost">Exporter en PDF</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="checklistTable">
+          <thead>
+            <tr>
+              <th>Ok</th>
+              <th>Catégorie</th>
+              <th>Équipement</th>
+              <th>Détails</th>
+              <th>Activités</th>
+              <th>Packs</th>
+              <th>Poids (g)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rempli dynamiquement -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
