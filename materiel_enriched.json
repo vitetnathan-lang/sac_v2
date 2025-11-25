@@ -12,7 +12,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Pluie"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -29,8 +31,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -46,8 +50,11 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid",
+      "Pluie"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -65,8 +72,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -82,7 +91,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Pluie"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -99,7 +110,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -116,7 +129,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -133,7 +148,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -150,7 +167,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -169,7 +188,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -186,7 +207,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -203,7 +226,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -220,8 +245,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -237,7 +264,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -254,7 +283,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -271,7 +302,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -290,8 +323,11 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid",
+      "Pluie"
+    ],
+    "tech_level": 4,
     "autonomy": false
   },
   {
@@ -307,7 +343,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -324,7 +362,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -341,7 +381,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -358,7 +400,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -375,7 +419,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -392,7 +438,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -409,7 +457,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -426,8 +476,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Tempéré"
+    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -444,8 +496,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -463,8 +517,11 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
+    "tech_level": 4,
     "autonomy": false
   },
   {
@@ -480,7 +537,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -497,8 +556,11 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid",
+      "Pluie"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -514,7 +576,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Pluie",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -531,7 +596,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -549,7 +616,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -566,8 +635,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -584,8 +655,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Pluie"
+    ],
+    "tech_level": 2,
     "autonomy": false
   },
   {
@@ -602,7 +675,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -620,7 +695,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -638,7 +716,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -656,7 +736,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -673,7 +755,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -690,7 +774,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -707,7 +793,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -724,7 +812,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -741,7 +832,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -759,7 +852,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -776,7 +872,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -793,7 +891,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -810,7 +910,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -827,7 +929,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -845,8 +949,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -864,7 +970,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -883,7 +992,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -902,7 +1013,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -920,7 +1033,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -938,7 +1053,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -956,7 +1073,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -973,7 +1092,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -991,7 +1112,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1008,7 +1131,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1025,7 +1150,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1042,7 +1169,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1059,7 +1188,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1077,7 +1208,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1095,7 +1228,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1113,7 +1248,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1131,7 +1268,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1149,7 +1288,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1167,7 +1308,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1185,7 +1328,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1203,7 +1348,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1221,7 +1368,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1239,7 +1388,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1257,7 +1408,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1275,7 +1428,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -1293,8 +1448,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1311,7 +1468,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1329,8 +1488,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1347,8 +1508,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1365,8 +1528,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1383,7 +1548,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1401,7 +1568,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1419,7 +1588,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1436,7 +1607,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1454,7 +1627,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1472,7 +1647,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1490,8 +1667,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1508,8 +1687,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
-    "tech_level": 1,
+    "meteo": [
+      "Froid"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -1526,7 +1707,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1544,7 +1727,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1562,7 +1747,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1580,7 +1767,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1598,7 +1787,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1616,7 +1807,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1634,7 +1827,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1652,7 +1847,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1670,7 +1867,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1687,7 +1886,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1704,7 +1905,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1721,7 +1924,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1738,7 +1943,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1756,7 +1963,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1773,7 +1982,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1790,7 +2001,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1807,7 +2020,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1824,7 +2039,10 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1841,7 +2059,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1858,7 +2078,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1875,7 +2097,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1893,7 +2117,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1911,7 +2137,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1929,7 +2157,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1947,7 +2177,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1964,7 +2196,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1981,7 +2215,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -1998,7 +2234,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2015,7 +2253,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2033,7 +2273,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2050,7 +2292,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2067,7 +2311,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2084,7 +2330,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2101,7 +2349,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2118,7 +2368,9 @@
     "activities": [],
     "weight_g": null,
     "price_eur": null,
-    "meteo": [],
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2136,9 +2388,12 @@
     ],
     "activities": [],
     "weight_g": 260.0,
-    "price_eur": 100.0,
-    "meteo": [],
-    "tech_level": 1,
+    "price_eur": null,
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2155,9 +2410,12 @@
     ],
     "activities": [],
     "weight_g": 400.0,
-    "price_eur": 250.0,
-    "meteo": [],
-    "tech_level": 1,
+    "price_eur": null,
+    "meteo": [
+      "Froid",
+      "Pluie"
+    ],
+    "tech_level": 3,
     "autonomy": false
   },
   {
@@ -2174,8 +2432,10 @@
     ],
     "activities": [],
     "weight_g": 210.0,
-    "price_eur": 350.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2193,8 +2453,10 @@
     ],
     "activities": [],
     "weight_g": 280.0,
-    "price_eur": 80.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2212,8 +2474,10 @@
     ],
     "activities": [],
     "weight_g": 475.0,
-    "price_eur": 80.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Froid"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2230,8 +2494,10 @@
     ],
     "activities": [],
     "weight_g": 25.0,
-    "price_eur": 10.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": false
   },
@@ -2248,8 +2514,10 @@
     ],
     "activities": [],
     "weight_g": 1100.0,
-    "price_eur": 200.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2266,8 +2534,10 @@
     ],
     "activities": [],
     "weight_g": 1720.0,
-    "price_eur": 450.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2284,8 +2554,10 @@
     ],
     "activities": [],
     "weight_g": 700.0,
-    "price_eur": 150.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2302,8 +2574,10 @@
     ],
     "activities": [],
     "weight_g": 87.0,
-    "price_eur": 60.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2320,8 +2594,11 @@
     ],
     "activities": [],
     "weight_g": 900.0,
-    "price_eur": 360.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Froid",
+      "Chaud"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2338,8 +2615,10 @@
     ],
     "activities": [],
     "weight_g": 80.0,
-    "price_eur": 20.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   },
@@ -2356,8 +2635,10 @@
     ],
     "activities": [],
     "weight_g": 220.0,
-    "price_eur": 55.0,
-    "meteo": [],
+    "price_eur": null,
+    "meteo": [
+      "Tempéré"
+    ],
     "tech_level": 1,
     "autonomy": true
   }

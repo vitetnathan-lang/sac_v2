@@ -49,16 +49,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   initialiserUI();
 });
 
+/* ---------------------------------------------------
+   Chargement du JSON enrichi
+--------------------------------------------------- */
 async function chargerMateriel() {
   try {
-    const res = await fetch("materiel.json");
+    const res = await fetch("materiel_enriched.json");
     materiel = await res.json();
   } catch (e) {
-    console.error("Erreur chargement materiel.json", e);
+    console.error("Erreur chargement materiel_enriched.json", e);
     materiel = [];
   }
 }
 
+/* ---------------------------------------------------
+   Initialisation interface
+--------------------------------------------------- */
 function initialiserUI() {
   const destinationSelect = document.getElementById("destination");
   const activiteSelect = document.getElementById("activite");
@@ -107,26 +113,49 @@ function initialiserUI() {
   btnExportPdf.addEventListener("click", exporterPdf);
 }
 
+/* ---------------------------------------------------
+   FILTRAGE INTELLIGENT
+--------------------------------------------------- */
 function genererChecklist(criteres) {
   let resultat = materiel.filter(item => {
-    // Activité
+
+    /* --- ACTIVITÉ & COMPATIBLES --- */
     if (criteres.activite) {
       const acts = (item.activities || []).map(a => a.toLowerCase());
       const cat = (item.category || "").toLowerCase();
       const crit = criteres.activite.toLowerCase();
+
       if (!(acts.includes(crit) || cat.includes(crit))) {
         return false;
       }
     }
 
-    // Autonomie
-    if (criteres.autonomie !== null) {
-      const isAutonomieItem = (item.packs || []).some(p => p.toLowerCase().includes("autonomie"));
-      if (criteres.autonomie && !isAutonomieItem) return false;
-      // si autonomie = non, on garde aussi l'équipement de base, donc pas de filtre strict ici
+    /* --- METEO --- */
+    if (criteres.meteo && item.meteo && item.meteo.length > 0) {
+      if (!item.meteo.includes(criteres.meteo)) {
+        return false;
+      }
     }
 
-    // Niveau technique (placeholder : tout en niveau 1)
+    /* --- AUTONOMIE --- */
+    if (criteres.autonomie !== null) {
+      const isAutonomieItem = (item.packs || [])
+        .some(p => p.toLowerCase().includes("autonomie"));
+
+      if (criteres.autonomie === true) {
+        // on exige autonomie ou base
+        if (!(isAutonomieItem || (item.packs || []).includes("Base"))) {
+          return false;
+        }
+      } else {
+        // autonomie = non → on exclut items strictement autonomie
+        if (isAutonomieItem) {
+          return false;
+        }
+      }
+    }
+
+    /* --- NIVEAU TECHNIQUE --- */
     const tech = item.tech_level || item.techLevel || 1;
     if (tech > criteres.techLevel) return false;
 
@@ -137,6 +166,9 @@ function genererChecklist(criteres) {
   miseAJourResume(criteres, resultat);
 }
 
+/* ---------------------------------------------------
+   AFFICHAGE CHECKLIST
+--------------------------------------------------- */
 function miseAJourChecklist(liste) {
   const tbody = document.querySelector("#checklistTable tbody");
   tbody.innerHTML = "";
@@ -190,6 +222,9 @@ function miseAJourChecklist(liste) {
   document.getElementById("totalItems").textContent = liste.length.toString();
 }
 
+/* ---------------------------------------------------
+   AFFICHAGE DU RÉSUMÉ
+--------------------------------------------------- */
 function miseAJourResume(criteres, liste = []) {
   const el = document.getElementById("summaryText");
   if (!criteres) {
@@ -203,24 +238,29 @@ function miseAJourResume(criteres, liste = []) {
   if (criteres.activite) parts.push("Activité : " + criteres.activite);
   if (criteres.meteo) parts.push("Météo : " + criteres.meteo);
   if (criteres.autonomie !== null) parts.push("Autonomie : " + (criteres.autonomie ? "oui" : "non"));
-  parts.push("Niveau technique ≤ " + criteres.techLevel);
+  parts.push("Niv. technique ≤ " + criteres.techLevel);
   parts.push("Durée : " + criteres.duree + " j");
   parts.push("Items : " + liste.length);
 
   el.textContent = parts.join(" · ");
 }
 
+/* ---------------------------------------------------
+   EXPORT PDF
+--------------------------------------------------- */
 function exporterPdf() {
   if (typeof window.jspdf === "undefined" && typeof window.jsPDF === "undefined") {
-    alert("jsPDF non chargé. Le PDF ne peut pas être généré ici, mais le bouton fonctionnera une fois en ligne.");
+    alert("jsPDF non chargé. Le PDF sera fonctionnel une fois le site en ligne.");
     return;
   }
+
   const { jsPDF } = window.jspdf || window;
   const doc = new jsPDF();
 
   doc.text("Checklist Sac v2", 10, 10);
   const rows = [];
   const tbody = document.querySelector("#checklistTable tbody");
+
   tbody.querySelectorAll("tr").forEach(tr => {
     const cells = tr.querySelectorAll("td");
     rows.push([
