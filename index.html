@@ -5,17 +5,18 @@
   <title>Sac v2 - Générateur de checklist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
-  <!-- jsPDF CDN for PDF export -->
+  <!-- jsPDF pour l'export PDF -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
   <header class="header">
     <h1>Sac v2</h1>
-    <p>Générateur de checklist à partir de ton matériel.</p>
+    <p>Générateur de checklist à partir de ton matériel (avec météo auto).</p>
   </header>
 
   <main class="container">
+    <!-- Paramètres du voyage -->
     <section class="card">
       <h2>Paramètres du voyage</h2>
       <div class="form-grid">
@@ -53,7 +54,6 @@
             <option value="Tempéré">Tempéré</option>
             <option value="Froid">Froid</option>
             <option value="Pluie">Pluie</option>
-            <option value="Neige">Neige</option>
           </select>
         </label>
 
@@ -80,14 +80,34 @@
           Durée (jours)
           <input type="number" id="duree" min="1" max="60" value="7" />
         </label>
+
+        <!-- Adresse + dates pour météo auto -->
+        <label>
+          Adresse / lieu
+          <input type="text" id="adresse" placeholder="Ex : Chamonix, France" />
+        </label>
+
+        <label>
+          Date de début (pour le climat)
+          <input type="date" id="dateDebut" />
+        </label>
+
+        <label>
+          Date de fin
+          <input type="date" id="dateFin" />
+        </label>
       </div>
 
       <div class="actions">
         <button id="btnGenerate">Générer mon sac</button>
+        <button id="btnFromAddress" class="secondary">
+          Adresse → Météo → Sac
+        </button>
         <button id="btnReset" class="secondary">Réinitialiser</button>
       </div>
     </section>
 
+    <!-- Résumé + checklist -->
     <section class="card">
       <div class="summary">
         <div>
@@ -119,7 +139,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- rempli dynamiquement -->
+            <!-- Rempli dynamiquement par app.js -->
           </tbody>
         </table>
       </div>
