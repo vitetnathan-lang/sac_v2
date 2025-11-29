@@ -559,6 +559,20 @@ function genererChecklist(criteres) {
       return false;
     }
 
+    // CASQUETTE SAHARIENNE / SAHARA : ce type de couvre‑chef est réservé aux
+    // environnements très chauds ou tropicaux (protection solaire + nuque). Il
+    // est inutile pour des randonnées tempérées ou froides (ex.: Compostelle).
+    if (
+      criteres.meteo &&
+      !["chaud", "tropical"].includes(criteres.meteo.toLowerCase()) &&
+      item.category &&
+      (item.category.toLowerCase().includes("saharienne") ||
+        item.category.toLowerCase().includes("sahara") ||
+        item.category.toLowerCase().includes("saharien"))
+    ) {
+      return false;
+    }
+
     /*
      * Filtre d'exclusion pour les équipements électroniques avancés lorsque
      * l'utilisateur n'est pas en autonomie (pas de tente/popote) et que le
