@@ -1,6 +1,14 @@
+// Main logic for the Sac v2 checklist application. This version extends the
+// original project to support quantity calculations based on trip duration
+// (duree) and a new `days_dependent` flag on each equipment item. Items marked
+// as `days_dependent: true` will be multiplied by the number of days in the
+// trip. The file also normalises the `meteo` property to ensure it is always
+// an array of strings.
+
 let materiel = [];
 
-// Configuration des destinations
+// Configuration des destinations prédéfinies. Chaque destination définit
+// l'activité, la météo attendue, le niveau d'autonomie et le niveau technique.
 const destinations = {
   gr20: {
     label: "GR20 autonomie",
@@ -46,6 +54,7 @@ const destinations = {
   }
 };
 
+// Charge les données du fichier JSON et initialise l'interface une fois le DOM prêt.
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerMateriel();
   initialiserUI();
@@ -53,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /* -------------------------------
    Chargement du JSON matériel
-------------------------------- */
+-------------------------------- */
 async function chargerMateriel() {
   try {
     const res = await fetch("materiel_enriched.json");
@@ -67,16 +76,14 @@ async function chargerMateriel() {
   }
 }
 
+// Normalise un champ qui peut être soit une chaîne, soit une liste, soit vide.
 function normaliserListeBrute(valeur) {
   if (Array.isArray(valeur)) {
     return valeur.map((v) => `${v ?? ""}`.trim()).filter(Boolean);
   }
-
   if (typeof valeur === "string") {
     const texte = valeur.trim();
-
     if (!texte) return [];
-
     if (texte.startsWith("[") && texte.endsWith("]")) {
       try {
         const parsed = JSON.parse(texte.replace(/'/g, '"'));
@@ -89,29 +96,30 @@ function normaliserListeBrute(valeur) {
           .filter(Boolean);
       }
     }
-
     return texte
       .split(",")
       .map((p) => p.replace(/['"]+/g, "").trim())
       .filter(Boolean);
   }
-
   if (valeur === null || valeur === undefined) return [];
-
   return [`${valeur}`.trim()].filter(Boolean);
 }
 
+// Transforme un item brut en objet normalisé. En plus de normaliser les listes
+// `packs`, `activities` et `meteo`, cette fonction ajoute un booléen
+// `days_dependent` qui indique si l'objet doit être multiplié par la durée du voyage.
 function normaliserItem(itemBrut) {
   const item = { ...itemBrut };
   item.packs = normaliserListeBrute(item.packs);
   item.activities = normaliserListeBrute(item.activities);
-
+  item.meteo = normaliserListeBrute(item.meteo);
+  item.days_dependent = Boolean(itemBrut.days_dependent);
   return item;
 }
 
 /* -------------------------------
    Initialisation de l'interface
-------------------------------- */
+-------------------------------- */
 function initialiserUI() {
   const destinationSelect = document.getElementById("destination");
   const activiteSelect = document.getElementById("activite");
@@ -121,14 +129,13 @@ function initialiserUI() {
   const dureeInput = document.getElementById("duree");
   const adresseInput = document.getElementById("adresse");
   const moisSelect = document.getElementById("mois");
-
   const btnGenerate = document.getElementById("btnGenerate");
   const btnFromAddress = document.getElementById("btnFromAddress");
   const btnReset = document.getElementById("btnReset");
   const btnExportPdf = document.getElementById("btnExportPdf");
   const themeToggle = document.getElementById("themeToggle");
 
-  // Destination → auto-remplissage
+  // Destination → auto-remplissage des autres champs lorsque l'utilisateur sélectionne une destination.
   destinationSelect.addEventListener("change", () => {
     const val = destinationSelect.value;
     if (val && destinations[val]) {
@@ -141,7 +148,7 @@ function initialiserUI() {
     }
   });
 
-  // Générer sac à partir des paramètres
+  // Générer sac à partir des paramètres saisis manuellement.
   btnGenerate.addEventListener("click", () => {
     const criteres = lireCriteres(false);
     genererChecklist(criteres);
@@ -178,7 +185,7 @@ function initialiserUI() {
 
 /* -------------------------------
    Lecture des critères (manuel)
-------------------------------- */
+-------------------------------- */
 function lireCriteres(includeMeteoAutoInfo) {
   const destinationSelect = document.getElementById("destination");
   const activiteSelect = document.getElementById("activite");
@@ -187,7 +194,6 @@ function lireCriteres(includeMeteoAutoInfo) {
   const techLevelSelect = document.getElementById("techLevel");
   const dureeInput = document.getElementById("duree");
   const moisSelect = document.getElementById("mois");
-
   return {
     destination: destinationSelect.value || null,
     activite: activiteSelect.value || null,
@@ -206,7 +212,7 @@ function lireCriteres(includeMeteoAutoInfo) {
 
 /* -------------------------------
    Lecture critères + météo auto
-------------------------------- */
+-------------------------------- */
 async function lireCriteresAvecMeteoAuto() {
   const adresseInput = document.getElementById("adresse");
   const moisSelect = document.getElementById("mois");
@@ -215,21 +221,14 @@ async function lireCriteresAvecMeteoAuto() {
   const autonomieSelect = document.getElementById("autonomie");
   const techLevelSelect = document.getElementById("techLevel");
   const dureeInput = document.getElementById("duree");
-
   const adresse = (adresseInput.value || "").trim();
   const moisVal = moisSelect.value;
-
   if (!adresse || !moisVal) {
     alert("Merci de saisir une adresse ET un mois.");
     return null;
   }
-
   try {
-    miseAJourResume(
-      { infoOnly: true, texte: "Analyse météo en cours..." },
-      []
-    );
-
+    miseAJourResume({ infoOnly: true, texte: "Analyse météo en cours..." }, []);
     const mInt = parseInt(moisVal, 10);
     const loc = await geocoderAdresse(adresse);
     if (!loc) {
@@ -237,9 +236,7 @@ async function lireCriteresAvecMeteoAuto() {
       miseAJourResume(null, []);
       return null;
     }
-
     const meteoInfo = await analyserMeteoPourMois(loc.lat, loc.lon, mInt);
-
     // Si l'utilisateur n'a pas forcé la météo, on utilise celle dérivée
     if (!meteoSelect.value && meteoInfo.meteoCategorie) {
       meteoSelect.value = meteoInfo.meteoCategorie;
@@ -249,17 +246,14 @@ async function lireCriteresAvecMeteoAuto() {
     } else if (meteoInfo.pluieImportante) {
       meteoSelect.value = "Pluie";
     }
-
     // Activité : si rien, Randonnée par défaut
     if (!activiteSelect.value) {
       activiteSelect.value = "Randonnée";
     }
-
     const critAutonomie =
       autonomieSelect.value === ""
         ? null
         : autonomieSelect.value === "oui";
-
     return {
       destination: null,
       activite: activiteSelect.value || null,
@@ -281,7 +275,7 @@ async function lireCriteresAvecMeteoAuto() {
 
 /* -------------------------------
    Géocodage via Nominatim
-------------------------------- */
+-------------------------------- */
 async function geocoderAdresse(adresse) {
   const url =
     "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" +
@@ -295,7 +289,6 @@ async function geocoderAdresse(adresse) {
   if (!res.ok) throw new Error("Erreur Nominatim " + res.status);
   const data = await res.json();
   if (!data || data.length === 0) return null;
-
   return {
     lat: parseFloat(data[0].lat),
     lon: parseFloat(data[0].lon),
@@ -305,7 +298,7 @@ async function geocoderAdresse(adresse) {
 
 /* -------------------------------
    Météo moyenne d'un mois
-------------------------------- */
+-------------------------------- */
 function getStartEndForMonth(year, monthInt) {
   const lastDayPerMonth = {
     1: 31,
@@ -332,24 +325,19 @@ function getStartEndForMonth(year, monthInt) {
 async function analyserMeteoPourMois(lat, lon, monthInt) {
   const year = new Date().getFullYear() - 1;
   const { start, end } = getStartEndForMonth(year, monthInt);
-
   const url =
     `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}` +
     `&start_date=${start}&end_date=${end}` +
     `&daily=temperature_2m_mean,precipitation_sum,snowfall_sum&timezone=auto`;
-
   const res = await fetch(url);
   if (!res.ok) throw new Error("Erreur Open-Meteo " + res.status);
   const data = await res.json();
-
   if (!data || !data.daily || !data.daily.time || !data.daily.time.length) {
     throw new Error("Données météo indisponibles.");
   }
-
   const temps = data.daily.temperature_2m_mean || [];
   const precip = data.daily.precipitation_sum || [];
   const neige = data.daily.snowfall_sum || [];
-
   const n = data.daily.time.length;
   let sumT = 0,
     sumP = 0,
@@ -359,23 +347,18 @@ async function analyserMeteoPourMois(lat, lon, monthInt) {
     if (typeof precip[i] === "number") sumP += precip[i];
     if (typeof neige[i] === "number") sumS += neige[i];
   }
-
   const tMoy = sumT / n;
   const pMoy = sumP / n;
   const sTot = sumS;
-
   let meteoCat = "Tempéré";
   if (tMoy >= 22) meteoCat = "Chaud";
   else if (tMoy <= 10) meteoCat = "Froid";
-
   const pluieImportante = pMoy >= 3;
   const neigeProbable = sTot > 0.4;
-
   let labelParts = [];
   labelParts.push(`T° moy. ≈ ${tMoy.toFixed(1)}°C`);
   if (pluieImportante) labelParts.push("pluvieux");
   if (neigeProbable) labelParts.push("neige possible");
-
   return {
     meteoCategorie: meteoCat,
     pluieImportante,
@@ -385,25 +368,19 @@ async function analyserMeteoPourMois(lat, lon, monthInt) {
 }
 
 /* -------------------------------
-   Filtrage intelligent
-------------------------------- */
+   Filtrage intelligent et calcul de quantité
+-------------------------------- */
 function genererChecklist(criteres) {
   let resultat = materiel.filter((item) => {
-    const acts = (item.activities || []).map((a) =>
-      (a || "").toLowerCase()
-    );
+    const acts = (item.activities || []).map((a) => (a || "").toLowerCase());
     const cat = (item.category || "").toLowerCase();
     const fam = (item.family || "").toLowerCase();
     const packs = normaliserListeBrute(item.packs).map((p) => p.toLowerCase());
-
     // ACTIVITÉ
     if (criteres.activite) {
       const crit = criteres.activite.toLowerCase();
-      const matchActivite =
-        acts.includes(crit) || cat.includes(crit);
-
+      const matchActivite = acts.includes(crit) || cat.includes(crit);
       const hasDeclaredActivity = acts.length > 0;
-
       if (!matchActivite) {
         // Items génériques (lampe, Nalgene, etc.) gardés même si activité différente
         const genericFamilies = [
@@ -414,14 +391,10 @@ function genererChecklist(criteres) {
           "accessoires tête/mains/pieds",
           "couchage"
         ];
-        const isGeneric = genericFamilies.some((g) =>
-          fam.includes(g)
-        );
-
+        const isGeneric = genericFamilies.some((g) => fam.includes(g));
         if (hasDeclaredActivity || !isGeneric) return false;
       }
     }
-
     // EXCLUSION SKI / NEIGE quand activité = Randonnée
     if (
       criteres.activite &&
@@ -447,14 +420,12 @@ function genererChecklist(criteres) {
         return false;
       }
     }
-
     // METEO
     if (criteres.meteo && item.meteo && item.meteo.length > 0) {
       if (!item.meteo.includes(criteres.meteo)) {
         return false;
       }
     }
-
     // AUTONOMIE : si non, on exclut les items purement autonomie
     if (
       criteres.autonomie === false &&
@@ -462,32 +433,32 @@ function genererChecklist(criteres) {
     ) {
       return false;
     }
-
     // NIVEAU TECH
     const tech = item.tech_level || 1;
     if (tech > criteres.techLevel) return false;
-
     return true;
   });
-
+  // Calcule la quantité pour chaque item en fonction de la durée et du flag days_dependent.
+  resultat = resultat.map((item) => {
+    const qty = item.days_dependent ? criteres.duree : 1;
+    return { ...item, quantity: qty };
+  });
   miseAJourChecklist(resultat);
   miseAJourResume(criteres, resultat);
 }
 
 /* -------------------------------
-   Affichage checklist
-------------------------------- */
+   Affichage checklist avec quantités
+-------------------------------- */
 function miseAJourChecklist(liste) {
   const tbody = document.querySelector("#checklistTable tbody");
   tbody.innerHTML = "";
   let totalPoids = 0;
-
+  let totalItems = 0;
   liste.forEach((e) => {
     const tr = document.createElement("tr");
-
     const activites = normaliserListeBrute(e.activities);
     const packs = normaliserListeBrute(e.packs);
-
     // Case à cocher
     const tdCheck = document.createElement("td");
     tdCheck.className = "checkbox-cell";
@@ -498,58 +469,49 @@ function miseAJourChecklist(liste) {
       box.textContent = box.classList.contains("checked") ? "✓" : "";
     });
     tdCheck.appendChild(box);
-
     const tdCat = document.createElement("td");
     tdCat.textContent = e.category || "";
-
     const tdName = document.createElement("td");
-    tdName.textContent =
-      (e.brand ? e.brand + " " : "") + (e.model || "");
-
+    tdName.textContent = (e.brand ? e.brand + " " : "") + (e.model || "");
     const tdDetails = document.createElement("td");
     tdDetails.textContent = e.details || "";
-
     const tdAct = document.createElement("td");
     tdAct.textContent = activites.join(", ");
-
     const tdPacks = document.createElement("td");
     tdPacks.textContent = packs.join(", ");
-
+    // Quantité
+    const tdQty = document.createElement("td");
+    const quantity = e.quantity || 1;
+    tdQty.textContent = String(quantity);
+    totalItems += quantity;
     const tdWeight = document.createElement("td");
     if (e.weight_g) {
-      tdWeight.textContent = e.weight_g.toString();
-      totalPoids += e.weight_g;
+      tdWeight.textContent = (e.weight_g * quantity).toString();
+      totalPoids += e.weight_g * quantity;
     } else {
       tdWeight.textContent = "";
     }
-
     tr.appendChild(tdCheck);
     tr.appendChild(tdCat);
     tr.appendChild(tdName);
     tr.appendChild(tdDetails);
     tr.appendChild(tdAct);
     tr.appendChild(tdPacks);
+    tr.appendChild(tdQty);
     tr.appendChild(tdWeight);
-
     tbody.appendChild(tr);
   });
-
-  document.getElementById("totalWeight").textContent =
-    totalPoids + " g";
-  document.getElementById("totalItems").textContent =
-    liste.length.toString();
+  document.getElementById("totalWeight").textContent = totalPoids + " g";
+  document.getElementById("totalItems").textContent = totalItems.toString();
 }
 
 /* -------------------------------
    Résumé en haut à droite
-------------------------------- */
+-------------------------------- */
 function miseAJourResume(criteres, liste = []) {
   const el = document.getElementById("summaryText");
   if (!criteres || criteres.infoOnly) {
-    el.textContent =
-      criteres && criteres.texte
-        ? criteres.texte
-        : "Aucun filtre appliqué.";
+    el.textContent = criteres && criteres.texte ? criteres.texte : "Aucun filtre appliqué.";
     return;
   }
   const parts = [];
@@ -559,29 +521,24 @@ function miseAJourResume(criteres, liste = []) {
   }
   if (criteres.activite) parts.push("Activité : " + criteres.activite);
   if (criteres.meteo) parts.push("Météo : " + criteres.meteo);
-  if (criteres.mois)
-    parts.push("Mois : " + String(criteres.mois).padStart(2, "0"));
-  if (criteres.autonomie !== null)
-    parts.push(
-      "Autonomie : " + (criteres.autonomie ? "oui" : "non")
-    );
+  if (criteres.mois) parts.push("Mois : " + String(criteres.mois).padStart(2, "0"));
+  if (criteres.autonomie !== null) parts.push("Autonomie : " + (criteres.autonomie ? "oui" : "non"));
   parts.push("Niv. tech ≤ " + criteres.techLevel);
   parts.push("Durée : " + criteres.duree + " j");
-  if (criteres.meteoAutoLabel)
-    parts.push("Climat : " + criteres.meteoAutoLabel);
-  parts.push("Items : " + liste.length);
-
+  if (criteres.meteoAutoLabel) parts.push("Climat : " + criteres.meteoAutoLabel);
+  // Nombre total d'items = somme des quantités plutôt que simple longueur de liste.
+  const totalQty = Array.isArray(liste)
+    ? liste.reduce((acc, item) => acc + (item.quantity || 1), 0)
+    : 0;
+  parts.push("Items : " + totalQty);
   el.textContent = parts.join(" · ");
 }
 
 /* -------------------------------
    Export PDF (simple, lisible)
-------------------------------- */
+-------------------------------- */
 function exporterPdf() {
-  if (
-    typeof window.jspdf === "undefined" &&
-    typeof window.jsPDF === "undefined"
-  ) {
+  if (typeof window.jspdf === "undefined" && typeof window.jsPDF === "undefined") {
     alert(
       "jsPDF non chargé. Le PDF sera fonctionnel en production (GitHub Pages)."
     );
@@ -589,9 +546,7 @@ function exporterPdf() {
   }
   const { jsPDF } = window.jspdf || window;
   const doc = new jsPDF();
-
   doc.text("Checklist Sac v2", 10, 10);
-
   const tbody = document.querySelector("#checklistTable tbody");
   const rows = [];
   tbody.querySelectorAll("tr").forEach((tr) => {
@@ -602,10 +557,10 @@ function exporterPdf() {
       cells[3]?.textContent || "",
       cells[4]?.textContent || "",
       cells[5]?.textContent || "",
-      cells[6]?.textContent || ""
+      cells[6]?.textContent || "",
+      cells[7]?.textContent || ""
     ]);
   });
-
   let y = 20;
   rows.forEach((r) => {
     doc.text(r.join(" | "), 10, y);
@@ -615,6 +570,5 @@ function exporterPdf() {
       y = 20;
     }
   });
-
   doc.save("checklist_sac_v2.pdf");
 }
