@@ -58,12 +58,39 @@ async function chargerMateriel() {
   try {
     const res = await fetch("materiel_enriched.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
-    materiel = await res.json();
+    const data = await res.json();
+    materiel = data.map(normaliserItem);
     console.log("Matériel chargé :", materiel.length, "items");
   } catch (e) {
     console.error("Erreur chargement materiel_enriched.json", e);
     materiel = [];
   }
+}
+
+function normaliserItem(itemBrut) {
+  const item = { ...itemBrut };
+
+  if (typeof item.packs === "string") {
+    const texte = item.packs.trim();
+
+    if (texte.startsWith("[") && texte.endsWith("]")) {
+      try {
+        item.packs = JSON.parse(texte.replace(/'/g, '"'));
+      } catch (err) {
+        item.packs = texte
+          .slice(1, -1)
+          .split(",")
+          .map((p) => p.replace(/['"]+/g, "").trim())
+          .filter(Boolean);
+      }
+    } else {
+      item.packs = [texte];
+    }
+  } else if (!Array.isArray(item.packs)) {
+    item.packs = [];
+  }
+
+  return item;
 }
 
 /* -------------------------------
