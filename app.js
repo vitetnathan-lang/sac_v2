@@ -67,28 +67,44 @@ async function chargerMateriel() {
   }
 }
 
-function normaliserItem(itemBrut) {
-  const item = { ...itemBrut };
+function normaliserListeBrute(valeur) {
+  if (Array.isArray(valeur)) {
+    return valeur.map((v) => `${v ?? ""}`.trim()).filter(Boolean);
+  }
 
-  if (typeof item.packs === "string") {
-    const texte = item.packs.trim();
+  if (typeof valeur === "string") {
+    const texte = valeur.trim();
+
+    if (!texte) return [];
 
     if (texte.startsWith("[") && texte.endsWith("]")) {
       try {
-        item.packs = JSON.parse(texte.replace(/'/g, '"'));
+        const parsed = JSON.parse(texte.replace(/'/g, '"'));
+        return normaliserListeBrute(parsed);
       } catch (err) {
-        item.packs = texte
+        return texte
           .slice(1, -1)
           .split(",")
           .map((p) => p.replace(/['"]+/g, "").trim())
           .filter(Boolean);
       }
-    } else {
-      item.packs = [texte];
     }
-  } else if (!Array.isArray(item.packs)) {
-    item.packs = [];
+
+    return texte
+      .split(",")
+      .map((p) => p.replace(/['"]+/g, "").trim())
+      .filter(Boolean);
   }
+
+  if (valeur === null || valeur === undefined) return [];
+
+  return [`${valeur}`.trim()].filter(Boolean);
+}
+
+function normaliserItem(itemBrut) {
+  const item = { ...itemBrut };
+  item.packs = normaliserListeBrute(item.packs);
+  item.activities = normaliserListeBrute(item.activities);
 
   return item;
 }
@@ -462,6 +478,9 @@ function miseAJourChecklist(liste) {
   liste.forEach((e) => {
     const tr = document.createElement("tr");
 
+    const activites = normaliserListeBrute(e.activities);
+    const packs = normaliserListeBrute(e.packs);
+
     // Case à cocher
     const tdCheck = document.createElement("td");
     tdCheck.className = "checkbox-cell";
@@ -484,10 +503,10 @@ function miseAJourChecklist(liste) {
     tdDetails.textContent = e.details || "";
 
     const tdAct = document.createElement("td");
-    tdAct.textContent = (e.activities || []).join(", ");
+    tdAct.textContent = activites.join(", ");
 
     const tdPacks = document.createElement("td");
-    tdPacks.textContent = (e.packs || []).join(", ");
+    tdPacks.textContent = packs.join(", ");
 
     const tdWeight = document.createElement("td");
     if (e.weight_g) {
