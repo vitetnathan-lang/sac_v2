@@ -394,12 +394,15 @@ function genererChecklist(criteres) {
     );
     const cat = (item.category || "").toLowerCase();
     const fam = (item.family || "").toLowerCase();
+    const packs = normaliserListeBrute(item.packs).map((p) => p.toLowerCase());
 
     // ACTIVITÉ
     if (criteres.activite) {
       const crit = criteres.activite.toLowerCase();
       const matchActivite =
         acts.includes(crit) || cat.includes(crit);
+
+      const hasDeclaredActivity = acts.length > 0;
 
       if (!matchActivite) {
         // Items génériques (lampe, Nalgene, etc.) gardés même si activité différente
@@ -414,7 +417,8 @@ function genererChecklist(criteres) {
         const isGeneric = genericFamilies.some((g) =>
           fam.includes(g)
         );
-        if (!isGeneric) return false;
+
+        if (hasDeclaredActivity || !isGeneric) return false;
       }
     }
 
@@ -452,7 +456,10 @@ function genererChecklist(criteres) {
     }
 
     // AUTONOMIE : si non, on exclut les items purement autonomie
-    if (criteres.autonomie === false && item.autonomy) {
+    if (
+      criteres.autonomie === false &&
+      (item.autonomy || packs.includes("autonomie"))
+    ) {
       return false;
     }
 
