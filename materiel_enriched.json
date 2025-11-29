@@ -28,12 +28,12 @@
     "details": "Raquettes rando neige",
     "family": "Chaussures",
     "activities": [
-      "Randonnée"
+      "Randonnée",
+      "Ski rando"
     ],
     "meteo": [
-      "Chaud",
-      "Froid",
-      "Pluie"
+      "Neige",
+      "Froid"
     ],
     "packs": [
       "Base"
@@ -41,7 +41,7 @@
     "weight_g": 900.0,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
+    "tech_level": 2,
     "autonomy": false,
     "days_dependent": false
   },
@@ -208,9 +208,8 @@
       "Randonnée"
     ],
     "meteo": [
-      "Chaud",
       "Froid",
-      "Pluie"
+      "Neige"
     ],
     "packs": [
       "Base"
@@ -218,7 +217,7 @@
     "weight_g": 900.0,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
+    "tech_level": 2,
     "autonomy": false,
     "days_dependent": false
   },
@@ -337,7 +336,10 @@
     "activities": [
       "Randonnée"
     ],
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Neige"
+    ],
     "packs": [
       "Base"
     ],
@@ -715,7 +717,7 @@
     "details": "Longe double réglable 125 cm",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée"
+      "Via ferrata"
     ],
     "meteo": [],
     "packs": [
@@ -724,7 +726,7 @@
     "weight_g": 200.0,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
+    "tech_level": 2,
     "autonomy": false,
     "days_dependent": false
   },
@@ -778,7 +780,8 @@
     "details": "Assureur-descendeur polyvalent",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée"
+      "Via ferrata",
+      "Alpinisme"
     ],
     "meteo": [],
     "packs": [
@@ -787,7 +790,7 @@
     "weight_g": 200.0,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
+    "tech_level": 2,
     "autonomy": false,
     "days_dependent": false
   },
@@ -1357,7 +1360,7 @@
     "brand": "Leki",
     "model": "Sherpa FX Carbon Strong",
     "details": "Bâtons pliables carbone (LEKI FX Carbon)",
-    "family": "Technique alpi / ski / grimpe",
+    "family": "Accessoires tête/mains/pieds",
     "activities": [
       "Randonnée"
     ],
@@ -1494,7 +1497,10 @@
     "activities": [
       "Randonnée"
     ],
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Neige"
+    ],
     "packs": [
       "Base"
     ],
@@ -1515,7 +1521,10 @@
     "activities": [
       "Alpinisme"
     ],
-    "meteo": [],
+    "meteo": [
+      "Froid",
+      "Neige"
+    ],
     "packs": [
       "Base"
     ],
@@ -2311,16 +2320,18 @@
     "details": "Fixations à inserts légères",
     "family": "Technique alpi / ski / grimpe",
     "activities": [
-      "Randonnée"
+      "Ski rando"
     ],
-    "meteo": [],
+    "meteo": [
+      "Neige"
+    ],
     "packs": [
       "Base"
     ],
     "weight_g": 200.0,
     "volume_l": 0.5,
     "owned": true,
-    "tech_level": 1,
+    "tech_level": 3,
     "autonomy": false,
     "days_dependent": false
   },

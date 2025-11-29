@@ -376,6 +376,72 @@ function genererChecklist(criteres) {
     const cat = (item.category || "").toLowerCase();
     const fam = (item.family || "").toLowerCase();
     const packs = normaliserListeBrute(item.packs).map((p) => p.toLowerCase());
+
+    // -------------------------------------------------
+    // Règles d'exclusion supplémentaires pour améliorer
+    // la cohérence des listes générées. Ces règles
+    // complètent le filtrage existant en retirant du
+    // matériel trop spécifique (alpinisme, ski, via
+    // ferrata, canyoning, snorkeling…) lorsqu'on
+    // sélectionne une randonnée classique, et en
+    // éliminant le matériel grand froid / neige
+    // lorsqu'il n'est pas approprié à la météo
+    // choisie.
+
+    // Si l'activité choisie est Randonnée, on élimine
+    // explicitement les articles destinés au ski de
+    // randonnée, à l'alpinisme, à la via ferrata, au
+    // canyoning, au snorkeling ou au climat tropical.
+    if (criteres.activite && criteres.activite.toLowerCase() === "randonnée") {
+      // Liste des activités incompatibles avec une rando classique
+      const excludedActs = [
+        "ski rando",
+        "alpinisme",
+        "via ferrata",
+        "canyoning",
+        "snorkeling",
+        "tropical"
+      ];
+      // Exclut si l'item déclare explicitement l'une de ces activités
+      if (acts.some((act) => excludedActs.includes(act))) {
+        return false;
+      }
+      // Exclut si la famille de l'item est très technique
+      const excludedFamilies = [
+        "technique alpi / ski / grimpe",
+        "canyoning",
+        "snorkeling"
+      ];
+      if (excludedFamilies.some((f) => fam.includes(f))) {
+        return false;
+      }
+    }
+
+    // Si la météo sélectionnée n'est ni Froid ni Neige (ou n'est pas renseignée),
+    // on enlève les articles explicitement liés à l'environnement hivernal :
+    // neige, grand froid, glacier, raquettes, ski, etc. Par défaut, on
+    // considère qu'une météo vide correspond à des conditions tempérées/chaudes.
+    {
+      const met = (criteres.meteo || "").toLowerCase();
+      if (met !== "froid" && met !== "neige") {
+        const text = `${cat} ${item.details || ""} ${item.model || ""}`.toLowerCase();
+        const coldKeywords = [
+          "neige",
+          "grand froid",
+          "glacier",
+          "raquette",
+          "ski",
+          "snow",
+          // On considère aussi le froid au sens large
+          "froid",
+          "hiver",
+          "thermique"
+        ];
+        if (coldKeywords.some((kw) => text.includes(kw))) {
+          return false;
+        }
+      }
+    }
     // ACTIVITÉ
     if (criteres.activite) {
       const crit = criteres.activite.toLowerCase();
