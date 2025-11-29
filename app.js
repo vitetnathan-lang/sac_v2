@@ -547,30 +547,24 @@ function genererChecklist(criteres) {
     const tech = item.tech_level || 1;
     if (tech > criteres.techLevel) return false;
 
-    // MOUSTIQUAIRE : inutile en conditions froides ou neigeuses. On exclut cet article
-    // pour les voyages où la météo est « Froid » ou « Neige » car il n’y a pas
-    // d’insectes dans ce type d’environnement.
-    if (
-      criteres.meteo &&
-      ["froid", "neige"].includes(criteres.meteo.toLowerCase()) &&
-      item.category &&
-      item.category.toLowerCase().includes("moustiquaire")
-    ) {
-      return false;
-    }
-
-    // CASQUETTE SAHARIENNE / SAHARA : ce type de couvre‑chef est réservé aux
-    // environnements très chauds ou tropicaux (protection solaire + nuque). Il
-    // est inutile pour des randonnées tempérées ou froides (ex.: Compostelle).
-    if (
-      criteres.meteo &&
-      !["chaud", "tropical"].includes(criteres.meteo.toLowerCase()) &&
-      item.category &&
-      (item.category.toLowerCase().includes("saharienne") ||
-        item.category.toLowerCase().includes("sahara") ||
-        item.category.toLowerCase().includes("saharien"))
-    ) {
-      return false;
+    // MOUSTIQUAIRE et CASQUETTE SAHARIENNE : ces accessoires ne sont utiles
+    // que par temps chaud ou tropical. Si la météo n’est pas précisée ou si
+    // elle diffère de « Chaud »/« Tropical », on les exclut. Cela évite de
+    // proposer une moustiquaire ou une casquette saharienne pour Compostelle
+    // ou d’autres randonnées tempérées ou froides.
+    {
+      const meteoLower = (criteres.meteo || "").toLowerCase();
+      const isHot = ["chaud", "tropical"].includes(meteoLower);
+      const catLower = item.category ? item.category.toLowerCase() : "";
+      if (
+        !isHot &&
+        (catLower.includes("moustiquaire") ||
+          catLower.includes("saharienne") ||
+          catLower.includes("sahara") ||
+          catLower.includes("saharien"))
+      ) {
+        return false;
+      }
     }
 
     /*
