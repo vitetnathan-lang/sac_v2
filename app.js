@@ -444,21 +444,65 @@ function genererChecklist(criteres) {
     }
     // ACTIVITÉ
     if (criteres.activite) {
-      const crit = criteres.activite.toLowerCase();
-      const matchActivite = acts.includes(crit) || cat.includes(crit);
+      // On établit une hiérarchie des activités afin que les équipements
+      // « Randonnée » puissent servir pour le « Trek », et ceux du « Trek »
+      // pour l'« Alpinisme » ou le « Ski rando ». Selon l'activité
+      // sélectionnée, on autorise la présence de plusieurs activités
+      // compatibles.
+      const selected = criteres.activite.toLowerCase();
+      let acceptedActivities;
+      switch (selected) {
+        case "randonnée":
+          acceptedActivities = ["randonnée"];
+          break;
+        case "trek":
+          acceptedActivities = ["randonnée", "trek"];
+          break;
+        case "alpinisme":
+          acceptedActivities = ["randonnée", "trek", "alpinisme"];
+          break;
+        case "ski rando":
+          acceptedActivities = ["randonnée", "trek", "alpinisme", "ski rando"];
+          break;
+        case "via ferrata":
+          acceptedActivities = ["randonnée", "via ferrata"];
+          break;
+        case "canyoning":
+          acceptedActivities = ["canyoning"];
+          break;
+        case "snorkeling":
+          acceptedActivities = ["snorkeling"];
+          break;
+        case "tropical":
+          // Pour les voyages tropicaux, on accepte Randonnée et Trek en plus
+          acceptedActivities = ["randonnée", "trek", "tropical"];
+          break;
+        default:
+          acceptedActivities = [selected];
+      }
       const hasDeclaredActivity = acts.length > 0;
+      // Certaines familles (électronique, cuisine/hydratation, hygiène, sacs,
+      // accessoires, couchage, abris) sont considérées génériques et peuvent
+      // être retenues même si l'activité ne correspond pas exactement.
+      const genericFamilies = [
+        "électronique",
+        "cuisine / hydratation",
+        "soin / hygiène / divers",
+        "sacs / organisation",
+        "accessoires tête/mains/pieds",
+        "couchage",
+        "abri"
+      ];
+      // L'item est-il compatible avec l'activité sélectionnée ou l'une des
+      // activités permises ?
+      const matchActivite =
+        acts.some((a) => acceptedActivities.includes(a)) ||
+        cat.includes(selected);
       if (!matchActivite) {
-        // Items génériques (lampe, Nalgene, etc.) gardés même si activité différente
-        const genericFamilies = [
-          "électronique",
-          "cuisine / hydratation",
-          "soin / hygiène / divers",
-          "sacs / organisation",
-          "accessoires tête/mains/pieds",
-          "couchage"
-        ];
         const isGeneric = genericFamilies.some((g) => fam.includes(g));
-        if (hasDeclaredActivity || !isGeneric) return false;
+        if (hasDeclaredActivity || !isGeneric) {
+          return false;
+        }
       }
     }
     // EXCLUSION SKI / NEIGE quand activité = Randonnée
@@ -502,6 +546,38 @@ function genererChecklist(criteres) {
     // NIVEAU TECH
     const tech = item.tech_level || 1;
     if (tech > criteres.techLevel) return false;
+
+    // MOUSTIQUAIRE : inutile en conditions froides ou neigeuses. On exclut cet article
+    // pour les voyages où la météo est « Froid » ou « Neige » car il n’y a pas
+    // d’insectes dans ce type d’environnement.
+    if (
+      criteres.meteo &&
+      ["froid", "neige"].includes(criteres.meteo.toLowerCase()) &&
+      item.category &&
+      item.category.toLowerCase().includes("moustiquaire")
+    ) {
+      return false;
+    }
+
+    /*
+     * Filtre d'exclusion pour les équipements électroniques avancés lorsque
+     * l'utilisateur n'est pas en autonomie (pas de tente/popote) et que le
+     * niveau technique est faible. Pour des voyages comme Compostelle ou
+     * certaines randonnées faciles, il n'est pas nécessaire d'emporter une
+     * balise satellite, un panneau solaire ou une grosse batterie externe.
+     */
+    if (
+      criteres.autonomie === false &&
+      criteres.techLevel <= 1 &&
+      item.family &&
+      item.family.toLowerCase().includes("électronique")
+    ) {
+      const name = `${(item.category || "").toLowerCase()} ${(item.model || "").toLowerCase()} ${(item.details || "").toLowerCase()}`;
+      const heavyElec = ["balise", "satellite", "panneau", "solaire", "batterie", "powerbank"];
+      if (heavyElec.some((h) => name.includes(h))) {
+        return false;
+      }
+    }
     return true;
   });
   // Calcule la quantité pour chaque item en fonction de la durée et du flag days_dependent.
