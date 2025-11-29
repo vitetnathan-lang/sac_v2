@@ -58,12 +58,55 @@ async function chargerMateriel() {
   try {
     const res = await fetch("materiel_enriched.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
-    materiel = await res.json();
+    const data = await res.json();
+    materiel = data.map(normaliserItem);
     console.log("Matériel chargé :", materiel.length, "items");
   } catch (e) {
     console.error("Erreur chargement materiel_enriched.json", e);
     materiel = [];
   }
+}
+
+function normaliserListeBrute(valeur) {
+  if (Array.isArray(valeur)) {
+    return valeur.map((v) => `${v ?? ""}`.trim()).filter(Boolean);
+  }
+
+  if (typeof valeur === "string") {
+    const texte = valeur.trim();
+
+    if (!texte) return [];
+
+    if (texte.startsWith("[") && texte.endsWith("]")) {
+      try {
+        const parsed = JSON.parse(texte.replace(/'/g, '"'));
+        return normaliserListeBrute(parsed);
+      } catch (err) {
+        return texte
+          .slice(1, -1)
+          .split(",")
+          .map((p) => p.replace(/['"]+/g, "").trim())
+          .filter(Boolean);
+      }
+    }
+
+    return texte
+      .split(",")
+      .map((p) => p.replace(/['"]+/g, "").trim())
+      .filter(Boolean);
+  }
+
+  if (valeur === null || valeur === undefined) return [];
+
+  return [`${valeur}`.trim()].filter(Boolean);
+}
+
+function normaliserItem(itemBrut) {
+  const item = { ...itemBrut };
+  item.packs = normaliserListeBrute(item.packs);
+  item.activities = normaliserListeBrute(item.activities);
+
+  return item;
 }
 
 /* -------------------------------
@@ -435,6 +478,9 @@ function miseAJourChecklist(liste) {
   liste.forEach((e) => {
     const tr = document.createElement("tr");
 
+    const activites = normaliserListeBrute(e.activities);
+    const packs = normaliserListeBrute(e.packs);
+
     // Case à cocher
     const tdCheck = document.createElement("td");
     tdCheck.className = "checkbox-cell";
@@ -457,10 +503,10 @@ function miseAJourChecklist(liste) {
     tdDetails.textContent = e.details || "";
 
     const tdAct = document.createElement("td");
-    tdAct.textContent = (e.activities || []).join(", ");
+    tdAct.textContent = activites.join(", ");
 
     const tdPacks = document.createElement("td");
-    tdPacks.textContent = (e.packs || []).join(", ");
+    tdPacks.textContent = packs.join(", ");
 
     const tdWeight = document.createElement("td");
     if (e.weight_g) {
